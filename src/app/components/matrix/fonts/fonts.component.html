@@ -1,0 +1,17 @@
+<ion-list>
+  <ng-container *ngFor="let category of this.fonts">
+    <ion-item-divider>
+      <ion-label>{{category.category}}</ion-label>
+    </ion-item-divider>
+
+    <ion-item *ngFor="let font of this.category.fonts" (click)="close(font)">
+      <ion-label>
+        <ion-text color="tertiary">
+          <p>{{font.label}}</p>
+        </ion-text>
+        <ion-text text-wrap [style.font-family]="font.label">{{this.teaserText}}</ion-text>
+      </ion-label>
+      <ion-icon *ngIf="font.id == this.fontSelected.id" name="checkmark" slot="end"></ion-icon>
+    </ion-item>
+  </ng-container>
+</ion-list>

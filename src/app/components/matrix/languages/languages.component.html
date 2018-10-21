@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item *ngFor="let language of this.languages" (click)="close(language)">
+    <ion-label>
+      <ion-text text-wrap color="tertiary">
+        <p>{{language.label}}</p>
+      </ion-text>
+      <ion-text>{{language.value}}</ion-text>
+    </ion-label>
+    <ion-icon *ngIf="language.id == this.languageSelected.id" name="checkmark" slot="end"></ion-icon>
+  </ion-item>
+</ion-list>

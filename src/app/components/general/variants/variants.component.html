@@ -1,0 +1,11 @@
+<ion-list>
+  <ng-container *ngFor="let supplier of this.variants">
+    <ion-item-divider>
+      <ion-label>{{supplier.name}}</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let variant of this.supplier.variants" (click)="close(variant)">
+      <ion-label>{{variant.data.info.model}}</ion-label>
+      <!-- <ion-icon *ngIf="symbol.id == this.alarmSymbolSelected.id" name="checkmark" slot="end"></ion-icon> -->
+    </ion-item>
+  </ng-container>
+</ion-list>
