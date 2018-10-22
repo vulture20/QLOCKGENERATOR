@@ -12,6 +12,7 @@ import { GeneratorService } from './services/generator/generator.service';
 import { LanguagesService } from './services/languages/languages.service';
 import { FontsService } from './services/fonts/fonts.service';
 import { VariantsService } from './services/variants/variants.service';
+import { PlacementsService } from './services/placements/placements.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { VariantsService } from './services/variants/variants.service';
     GeneratorService,
     LanguagesService,
     VariantsService,
+    PlacementsService
   ],
   bootstrap: [AppComponent]
 })

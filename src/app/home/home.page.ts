@@ -1,13 +1,18 @@
+import { IPlacement, PlacementsService } from './../services/placements/placements.service';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+
 import { FontsService, IFont, FontCategory, IFontAlarm } from './../services/fonts/fonts.service';
 import { GeneratorService } from './../services/generator/generator.service';
 import { LanguagesService, ILanguage } from '../services/languages/languages.service';
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { PopoverController } from '../../../node_modules/@ionic/angular';
 import { VariantsService, IVariant, IVariantGroupedBySupplier } from '../services/variants/variants.service';
-import { SymbolsComponent } from '../components/alarm/symbols/symbols.component';
+
+import { SymbolsComponent } from './../components/alarm/symbols/symbols.component';
 import { VariantsComponent } from './../components/general/variants/variants.component';
 import { LanguagesComponent } from '../components/matrix/languages/languages.component';
-import { FontsComponent } from '../components/matrix/fonts/fonts.component';
+import { FontsComponent } from './../components/matrix/fonts/fonts.component';
+import { PlacementsComponent } from './../components/minutes/placements/placements.component';
+
 import { saveAs } from 'file-saver/FileSaver';
 
 @Component({
@@ -26,7 +31,7 @@ export class HomePage {
   protected generalFrontWidth: number = 450;
   protected generalFrontMirror: boolean = false;
   protected generalFrontOutline: boolean = false;
-  protected minutesPlacement: string = "corner";
+  protected minutesPlacement: IPlacement = { id: 0, value: "corner", label: "Ecken" };
   protected minutesRadius: number = 1;
   protected minutesDistanceX: number = 25;
   protected minutesDistanceY: number = 25;
@@ -57,6 +62,7 @@ export class HomePage {
     public languagesService: LanguagesService,
     public fontService: FontsService,
     public variantsService: VariantsService,
+    public placementsService: PlacementsService,
     public popoverController: PopoverController,
   ) {
     // console.log("HomePage constructor()");
@@ -77,7 +83,7 @@ export class HomePage {
 
   protected onClickGithubLogo() {
     // console.log("HomePage onClickGithubLogo()");
-    window.open("https://github.com/Fisch0204/QLOCKGENERATOR");
+    window.open("https://github.com/SimonGolms/QLOCKGENERATOR");
   }
 
   protected onChangeFrontVariant() {
@@ -100,7 +106,7 @@ export class HomePage {
 
         this.generalFrontHeight = this.generalFrontVariant.data.front.height;
         this.generalFrontWidth = this.generalFrontVariant.data.front.width;
-        this.minutesPlacement = this.generalFrontVariant.data.minutes.placement;
+        this.minutesPlacement = this.placementsService.getPlacementByValue(this.generalFrontVariant.data.minutes.placement);
         this.minutesRadius = this.generalFrontVariant.data.minutes.radius;
         this.minutesDistanceX = this.generalFrontVariant.data.minutes.distance.x;
         this.minutesDistanceY = this.generalFrontVariant.data.minutes.distance.y;
@@ -155,12 +161,33 @@ export class HomePage {
   }
 
   protected onChangeMinutesPlacement(event: any = null) {
-    // console.log("HomePage onChangeMinutesPlacement()", event);
+    console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.minutesPlacement != event.detail.value)) {
-      this.minutesPlacement = event.detail.value;
-      this.generateFrontPreview();
-    }
+    // if ((event != null)) {
+    //   console.log("HomePage onChangeMinutesPlacement() IF", event, this.minutesPlacement);
+    //   this.minutesPlacement = event.detail.value;
+    // }
+    this.generateFrontPreview();
+  }
+
+  protected async onClickMinutesPlacement(event: any = null) {
+    console.log("HomePage onClickMinutesPlacement()", event);
+    const popover = await this.popoverController.create({
+      component: PlacementsComponent,
+      componentProps: { select: this.minutesPlacement },
+      event: event,
+      translucent: true
+    });
+
+    popover.onDidDismiss().then((data) => {
+      console.log("HomePage onClickMinutesPlacement() - popover.onDidDismiss()", data);
+      if (data.role == "select") {
+        this.minutesPlacement = data.data;
+        this.generateFrontPreview();
+      }
+    });
+
+    return await popover.present();
   }
 
   protected onChangeMinutesRadius(event: any = null) {
@@ -405,7 +432,7 @@ export class HomePage {
 
   generateFrontPreview() {
     this.generator.generatePreview(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
+      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
       this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
       this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
@@ -418,7 +445,7 @@ export class HomePage {
       this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
 
     this.generator.generateSVG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
+      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
       this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
       this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
@@ -436,7 +463,7 @@ export class HomePage {
       this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
 
     this.generator.generateDXF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
+      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
       this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
       this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
@@ -452,7 +479,7 @@ export class HomePage {
       this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
 
     this.generator.generatePDF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
+      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
       this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
       this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
@@ -467,7 +494,7 @@ export class HomePage {
       this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
 
     this.generator.generatePNG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
+      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
       this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
       this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,

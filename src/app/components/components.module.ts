@@ -5,19 +5,22 @@ import { SymbolsComponent } from './alarm/symbols/symbols.component';
 import { VariantsComponent } from './general/variants/variants.component';
 import { FontsComponent } from './matrix/fonts/fonts.component';
 import { LanguagesComponent } from './matrix/languages/languages.component';
+import { PlacementsComponent } from './minutes/placements/placements.component';
 
 @NgModule({
     declarations: [
         SymbolsComponent,
         VariantsComponent,
         FontsComponent,
-        LanguagesComponent
+        LanguagesComponent,
+        PlacementsComponent
     ],
     entryComponents: [
         SymbolsComponent,
         VariantsComponent,
         FontsComponent,
-        LanguagesComponent
+        LanguagesComponent,
+        PlacementsComponent
     ],
     imports: [
         IonicModule,
@@ -27,7 +30,8 @@ import { LanguagesComponent } from './matrix/languages/languages.component';
         SymbolsComponent,
         VariantsComponent,
         FontsComponent,
-        LanguagesComponent
+        LanguagesComponent,
+        PlacementsComponent
     ]
 })
 export class ComponentsModule { }
