@@ -3,10 +3,12 @@
 </p>
 
 # QLOCKGENERATOR
+[![contributions welcome](https://img.shields.io/badge/Ionic-v4-3880ff.svg)](https://beta.ionicframework.com/docs)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/SimonGolms/QLOCKGENERATOR/issues)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d3da8203df839ea0fda2/maintainability)](https://codeclimate.com/github/SimonGolms/QLOCKGENERATOR/maintainability)
 [![Donate](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SYPW37BHKX4ZA)
 
 Generate your own front for your selfmade word clock.
-
 
 ## Featues
 
@@ -38,7 +40,7 @@ $ npm install -g ionic@latest
 
 Clone or download the latest version of the project:
 ```Shell
-$ git clone https://github.com/Fisch0204/QLOCKGENERATOR
+$ git clone https://github.com/SimonGolms/QLOCKGENERATOR
 $ cd QLOCKGENERATOR
 ```
 Install all the local dependencies:
