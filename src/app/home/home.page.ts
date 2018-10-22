@@ -379,7 +379,7 @@ export class HomePage {
   }
 
   protected onChangeColorFront(event: any = null) {
-    // console.log("HomePage onChangeColorFront()");
+    // console.log("HomePage onChangeColorFront()", event);
     // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
     let element = document.getElementById("background");
     if (element != undefined) {
@@ -389,7 +389,7 @@ export class HomePage {
   }
 
   protected onChangeColorLight(event: any = null) {
-    // console.log("HomePage onChangeColorLight()");
+    // console.log("HomePage onChangeColorLight()", event);
     // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
     let element = document.getElementById("minutes");
     if (element != undefined) {
