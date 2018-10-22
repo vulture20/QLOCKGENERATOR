@@ -66,12 +66,9 @@
           <ion-col size="12">
             <ion-item>
               <ion-label position="stacked">Platzierung</ion-label>
-              <ion-select [(ngModel)]="this.minutesPlacement" okText="Okay" cancelText="Abbrechen" debounce="300"
-                (ionChange)="this.onChangeMinutesPlacement($event)">
-                <ion-select-option value="corner">Ecken</ion-select-option>
-                <ion-select-option value="horizontal">Waagerecht</ion-select-option>
-                <ion-select-option value="vertical">Senkrecht</ion-select-option>
-              </ion-select>
+              <ion-input [(ngModel)]="this.minutesPlacement.label" readonly="true" (ionFocus)="this.onClickMinutesPlacement($event)">
+                <ion-icon name="arrow-dropdown"></ion-icon>
+              </ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
@@ -254,13 +251,13 @@
           <ion-col size="12">
             <ion-item>
               <ion-label position="stacked">Front</ion-label>
-              <ion-input type="text" [ngModel]="this.colorFront" debounce="300" (ionChange)="this.onChangeColorFront($event)"></ion-input>
+              <ion-input type="text" [(ngModel)]="this.colorFront" debounce="300" (ionChange)="this.onChangeColorFront($event)"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size="12">
             <ion-item>
               <ion-label position="stacked">Beleuchtung</ion-label>
-              <ion-input type="text" [ngModel]="this.colorLight" debounce="300" (ionChange)="this.onChangeColorLight($event)"></ion-input>
+              <ion-input type="text" [(ngModel)]="this.colorLight" debounce="300" (ionChange)="this.onChangeColorLight($event)"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
