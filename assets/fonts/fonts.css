@@ -1,286 +1,286 @@
 @font-face {
     font-family: "Alarm-Symbols";
-    src: url(/assets/fonts/Alarm-Symbols.ttf) format("truetype");
+    src: url(./Alarm-Symbols.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Avion";
-    src: url(/assets/fonts/bd184bc4cff38e2ac7228dc490291a03.ttf) format("truetype");
+    src: url(./bd184bc4cff38e2ac7228dc490291a03.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Blades";
-    src: url(/assets/fonts/d8d5af6222225e2cb626557c53a17944.ttf) format("truetype");
+    src: url(./d8d5af6222225e2cb626557c53a17944.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Breymont";
-    src: url(/assets/fonts/ca1f1c7d1993425b5284cd47a6aef619.ttf) format("truetype");
+    src: url(./ca1f1c7d1993425b5284cd47a6aef619.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN";
-    src: url(/assets/fonts/7737a754866a4378500fbf0a6808fe54.ttf) format("truetype");
+    src: url(./7737a754866a4378500fbf0a6808fe54.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN - Thin";
-    src: url(/assets/fonts/02db292e6c9f218372d371479a8e417a.ttf) format("truetype");
+    src: url(./02db292e6c9f218372d371479a8e417a.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN - Light";
-    src: url(/assets/fonts/975553ad05763e290ba31a889f390868.ttf) format("truetype");
+    src: url(./975553ad05763e290ba31a889f390868.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN - Bold";
-    src: url(/assets/fonts/8c3956e750af056bfa9ccdcc45ef0e4e.ttf) format("truetype");
+    src: url(./8c3956e750af056bfa9ccdcc45ef0e4e.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Round";
-    src: url(/assets/fonts/72dab58a307a3da921bc4813519ed441.ttf) format("truetype");
+    src: url(./72dab58a307a3da921bc4813519ed441.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Round - Light";
-    src: url(/assets/fonts/df595a18935ddd7171bc6411ce42bdab.ttf) format("truetype");
+    src: url(./df595a18935ddd7171bc6411ce42bdab.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Round - Bold";
-    src: url(/assets/fonts/a5686978417340480eb3b3a0c2982464.ttf) format("truetype");
+    src: url(./a5686978417340480eb3b3a0c2982464.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Stencil";
-    src: url(/assets/fonts/1a3840bea709f24a0129f7a4e5372885.ttf) format("truetype");
+    src: url(./1a3840bea709f24a0129f7a4e5372885.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Stencil - Thin";
-    src: url(/assets/fonts/6fbb7d0251a1f8a4ce01a22df835f4e3.ttf) format("truetype");
+    src: url(./6fbb7d0251a1f8a4ce01a22df835f4e3.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Stencil - Light";
-    src: url(/assets/fonts/431b4006ab48b77105500b8030a2821e.ttf) format("truetype");
+    src: url(./431b4006ab48b77105500b8030a2821e.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Stencil - Bold";
-    src: url(/assets/fonts/04956e1957f2622721b1593fb6551dab.ttf) format("truetype");
+    src: url(./04956e1957f2622721b1593fb6551dab.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Q1";
-    src: url(/assets/fonts/3db4863fed3e13b63db057a5b7099b25.ttf) format("truetype");
+    src: url(./3db4863fed3e13b63db057a5b7099b25.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DIN Q2";
-    src: url(/assets/fonts/7c6f5cd6fa441cb04d13679f92b4a262.ttf) format("truetype");
+    src: url(./7c6f5cd6fa441cb04d13679f92b4a262.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Dot Matrix";
-    src: url(/assets/fonts/a995332cb20cd46e2849967f5152d728.ttf) format("truetype");
+    src: url(./a995332cb20cd46e2849967f5152d728.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Frutiger";
-    src: url(/assets/fonts/3890fc143c4bee26d3001584630b1d37.ttf) format("truetype");
+    src: url(./3890fc143c4bee26d3001584630b1d37.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Gluck";
-    src: url(/assets/fonts/c99d43ab6fdc02b9011bccfe29075158.ttf) format("truetype");
+    src: url(./c99d43ab6fdc02b9011bccfe29075158.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Gluck - Stroked";
-    src: url(/assets/fonts/5dafad024b25d002a2ea1dc29846c708.ttf) format("truetype");
+    src: url(./5dafad024b25d002a2ea1dc29846c708.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Heimdal";
-    src: url(/assets/fonts/368d146f8a7c87973d100963d020a5f1.ttf) format("truetype");
+    src: url(./368d146f8a7c87973d100963d020a5f1.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Italianno";
-    src: url(/assets/fonts/b622cce140ed636cecb658f4d5ffc499.ttf) format("truetype");
+    src: url(./b622cce140ed636cecb658f4d5ffc499.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Khalbot";
-    src: url(/assets/fonts/469e61cd1088ef30e9298e912b1a87dc.ttf) format("truetype");
+    src: url(./469e61cd1088ef30e9298e912b1a87dc.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Klingon";
-    src: url(/assets/fonts/60bf06c50e504aa328a7dc7a3f43ffd6.ttf) format("truetype");
+    src: url(./60bf06c50e504aa328a7dc7a3f43ffd6.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Laser LED";
-    src: url(/assets/fonts/02f60539fc43f783a9359b15f2ac21bc.ttf) format("truetype");
+    src: url(./02f60539fc43f783a9359b15f2ac21bc.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Laser Punch 2";
-    src: url(/assets/fonts/be70ccc4b605ee104e06353e9ddc3c52.ttf) format("truetype");
+    src: url(./be70ccc4b605ee104e06353e9ddc3c52.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Laser Sans Serif";
-    src: url(/assets/fonts/e185f7fa2652932c42c1e75a58520d85.ttf) format("truetype");
+    src: url(./e185f7fa2652932c42c1e75a58520d85.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Laser Sans Serif - Bold";
-    src: url(/assets/fonts/bfb58ec1cfe2f2acb2c63f3584ffbd78.ttf) format("truetype");
+    src: url(./bfb58ec1cfe2f2acb2c63f3584ffbd78.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Laser Time";
-    src: url(/assets/fonts/a78c3954e21562483ce1e13104033ea2.ttf) format("truetype");
+    src: url(./a78c3954e21562483ce1e13104033ea2.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Milk Cookies";
-    src: url(/assets/fonts/286c9ab85ef8803326d2b52f3b2ea1c1.ttf) format("truetype");
+    src: url(./286c9ab85ef8803326d2b52f3b2ea1c1.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Montour";
-    src: url(/assets/fonts/d081acc2da38bdacbcf4b10ddeaf9752.ttf) format("truetype");
+    src: url(./d081acc2da38bdacbcf4b10ddeaf9752.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Neon One";
-    src: url(/assets/fonts/21107c42084fbcd207ce848b0e01dabe.ttf) format("truetype");
+    src: url(./21107c42084fbcd207ce848b0e01dabe.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Night Life";
-    src: url(/assets/fonts/636b0737e45c487ba691133e299c265a.ttf) format("truetype");
+    src: url(./636b0737e45c487ba691133e299c265a.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Old English Text";
-    src: url(/assets/fonts/19d538b99afe170b5d18de15ea9c8b67.ttf) format("truetype");
+    src: url(./19d538b99afe170b5d18de15ea9c8b67.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Rachel Roman";
-    src: url(/assets/fonts/bf1807e9b9b6a5b3ee05ba34e288ffa4.ttf) format("truetype");
+    src: url(./bf1807e9b9b6a5b3ee05ba34e288ffa4.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Solia Sans";
-    src: url(/assets/fonts/c2f8fc3015a38a9e0d3c6f41f16c33cd.ttf) format("truetype");
+    src: url(./c2f8fc3015a38a9e0d3c6f41f16c33cd.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Teratur";
-    src: url(/assets/fonts/f90d69171098075e502c9465e1d5538f.ttf) format("truetype");
+    src: url(./f90d69171098075e502c9465e1d5538f.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Theo Aged 6";
-    src: url(/assets/fonts/7c449a3d6488f894902edfedc36205a2.ttf) format("truetype");
+    src: url(./7c449a3d6488f894902edfedc36205a2.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Ykar";
-    src: url(/assets/fonts/3a40308bd4fedb785b2d57a21451b722.ttf) format("truetype");
+    src: url(./3a40308bd4fedb785b2d57a21451b722.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 /* @font-face {
     font-family: "MyOwnFont";
-    src: url(/assets/fonts/MyOwnFont.ttf) format("truetype");
+    src: url(./MyOwnFont.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 } */
