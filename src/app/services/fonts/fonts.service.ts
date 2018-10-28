@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class FontsService {
 
-  public readonly DIRECTORY: string = "/assets/fonts/";
+  public readonly DIRECTORY: string = "./assets/fonts/";
   // public readonly DIRECTORY: string = "/";
   public readonly FILENAME_ALARM_FONT: string = "Alarm-Symbols.ttf";
   public readonly DEFAULT_FONT_ID: string = "1";

@@ -47,7 +47,7 @@ export class HomePage {
   protected matrixLanguage: ILanguage = { id: "DE", label: "DE Deutsch", value: "" };
   protected matrixLanguages: ILanguage[] = [];
   protected matrixText: string = "ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR";
-  protected matrixFont: IFont = { id: "4000", label: "DIN", category: FontCategory.REGULAR, filename: "7737a754866a4378500fbf0a6808fe54.ttf", path: "/assets/fonts/", };
+  protected matrixFont: IFont = { id: "4000", label: "DIN", category: FontCategory.REGULAR, filename: "7737a754866a4378500fbf0a6808fe54.ttf", path: "./assets/fonts/", };
   protected matrixFonts: IFont[] = [];
   protected matrixFontSize: number = 21;
   protected logoText: string = "";
