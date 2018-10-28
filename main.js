@@ -1788,7 +1788,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var FontsService = /** @class */ (function () {
     function FontsService() {
-        this.DIRECTORY = "/assets/fonts/";
+        this.DIRECTORY = "./assets/fonts/";
         // public readonly DIRECTORY: string = "/";
         this.FILENAME_ALARM_FONT = "Alarm-Symbols.ttf";
         this.DEFAULT_FONT_ID = "1";
