@@ -136,7 +136,7 @@ export class HomePage {
     // console.log("HomePage onChangeFrontHeight()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.generalFrontHeight != event.detail.value)) {
-      this.generalFrontHeight = event.detail.value;
+      this.generalFrontHeight = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -145,7 +145,7 @@ export class HomePage {
     // console.log("HomePage onChangeFrontWidth()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.generalFrontWidth != event.detail.value)) {
-      this.generalFrontWidth = event.detail.value;
+      this.generalFrontWidth = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -162,11 +162,6 @@ export class HomePage {
 
   protected onChangeMinutesPlacement(event: any = null) {
     console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
-    // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    // if ((event != null)) {
-    //   console.log("HomePage onChangeMinutesPlacement() IF", event, this.minutesPlacement);
-    //   this.minutesPlacement = event.detail.value;
-    // }
     this.generateFrontPreview();
   }
 
@@ -194,7 +189,7 @@ export class HomePage {
     // console.log("HomePage onChangeMinutesRadius()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.minutesRadius != event.detail.value)) {
-      this.minutesRadius = event.detail.value;
+      this.minutesRadius = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -203,7 +198,7 @@ export class HomePage {
     // console.log("HomePage onChangeMinutesDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.minutesDistanceX != event.detail.value)) {
-      this.minutesDistanceX = event.detail.value;
+      this.minutesDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -212,7 +207,7 @@ export class HomePage {
     // console.log("HomePage onChangeMinutesDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.minutesDistanceY != event.detail.value)) {
-      this.minutesDistanceY = event.detail.value;
+      this.minutesDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -245,7 +240,7 @@ export class HomePage {
     // console.log("HomePage onChangeAlarmSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.alarmSize != event.detail.value)) {
-      this.alarmSize = event.detail.value;
+      this.alarmSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -254,7 +249,7 @@ export class HomePage {
     // console.log("HomePage onChangeAlarmDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.alarmDistanceX != event.detail.value)) {
-      this.alarmDistanceX = event.detail.value;
+      this.alarmDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -263,7 +258,7 @@ export class HomePage {
     // console.log("HomePage onChangeAlarmDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.alarmDistanceY != event.detail.value)) {
-      this.alarmDistanceY = event.detail.value;
+      this.alarmDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -272,7 +267,7 @@ export class HomePage {
     // console.log("HomePage onChangeMatrixColumns()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.matrixColumns != event.detail.value)) {
-      this.matrixColumns = event.detail.value;
+      this.matrixColumns = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -281,7 +276,7 @@ export class HomePage {
     // console.log("HomePage onChangeMatrixRows()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.matrixRows != event.detail.value)) {
-      this.matrixRows = event.detail.value;
+      this.matrixRows = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -290,7 +285,7 @@ export class HomePage {
     // console.log("HomePage onChangeMatrixDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.matrixDistanceX != event.detail.value)) {
-      this.matrixDistanceX = event.detail.value;
+      this.matrixDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -299,7 +294,7 @@ export class HomePage {
     // console.log("HomePage onChangeMatrixDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.matrixDistanceY != event.detail.value)) {
-      this.matrixDistanceY = event.detail.value;
+      this.matrixDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -367,7 +362,7 @@ export class HomePage {
     // console.log("HomePage onChangeMatrixFontSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.matrixFontSize != event.detail.value)) {
-      this.matrixFontSize = event.detail.value;
+      this.matrixFontSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -383,7 +378,7 @@ export class HomePage {
     // console.log("HomePage onChangeLogoTextSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.logoTextSize != event.detail.value)) {
-      this.logoTextSize = event.detail.value;
+      this.logoTextSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -391,7 +386,7 @@ export class HomePage {
     // console.log("HomePage onChangeLogoDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.logoDistanceX != event.detail.value)) {
-      this.logoDistanceX = event.detail.value;
+      this.logoDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
@@ -400,7 +395,7 @@ export class HomePage {
     // console.log("HomePage onChangeLogoDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if ((event != null) && (this.logoDistanceY != event.detail.value)) {
-      this.logoDistanceY = event.detail.value;
+      this.logoDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
   }
