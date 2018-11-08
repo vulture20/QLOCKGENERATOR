@@ -418,6 +418,7 @@ export class GeneratorService {
           model.layer = "text";
           models.push(model);
         }
+        resolve(models);
       });
     });
     return promise;
@@ -462,7 +463,7 @@ export class GeneratorService {
 
     // Add Logo
     if (logoText.length > 0) {
-      let logoGrid = this.calculateAlarmCoordinate(frontHeight, frontWidth, logoDistanceX, logoDistanceY);
+      let logoGrid = this.calculateLogoCoordinate(frontHeight, frontWidth, logoDistanceX, logoDistanceY);
       let resultLogo = await this.generateFrontModelAddLogo(matrixFont, logoText, logoTextSize, logoGrid).then((models) => {
         front.models = front.models.concat(models);
       });
