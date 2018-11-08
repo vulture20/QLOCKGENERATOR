@@ -1,20 +1,241 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[14],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/2jswtbop.entry.js":
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/1pa4qmzr.entry.js":
 /*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/2jswtbop.entry.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/1pa4qmzr.entry.js ***!
   \***********************************************************************/
-/*! exports provided: IonAnimationController */
+/*! exports provided: IonButton, IonIcon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonAnimationController", function() { return AnimationControllerImpl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonButton", function() { return Button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IonIcon", function() { return Icon; });
+/* harmony import */ var _ionic_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../ionic.core.js */ "./node_modules/@ionic/core/dist/esm/es5/ionic.core.js");
+/* harmony import */ var _chunk_c23403d0_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-c23403d0.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-c23403d0.js");
+/* harmony import */ var _chunk_b9ec67ac_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chunk-b9ec67ac.js */ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-b9ec67ac.js");
 /*!
  * (C) Ionic http://ionicframework.com - MIT License
  * Built with http://stenciljs.com
  */
-function transitionEnd(t,e){var i,s={passive:!0};function r(){i&&i()}function n(i){t===i.target&&(r(),e(i))}return t&&(t.addEventListener("webkitTransitionEnd",n,s),t.addEventListener("transitionend",n,s),i=function(){t.removeEventListener("webkitTransitionEnd",n,s),t.removeEventListener("transitionend",n,s)}),r}var CSS_VALUE_REGEX=/(^-?\d*\.?\d*)(.*)/,DURATION_MIN=32,TRANSITION_END_FALLBACK_PADDING_MS=400,TRANSFORM_PROPS={translateX:1,translateY:1,translateZ:1,scale:1,scaleX:1,scaleY:1,scaleZ:1,rotate:1,rotateX:1,rotateY:1,rotateZ:1,skewX:1,skewY:1,perspective:1},raf=window.requestAnimationFrame?window.requestAnimationFrame.bind(window):function(t){return t(Date.now())},Animator=function(){function t(){this._hasDur=!1,this._hasTweenEffect=!1,this._isAsync=!1,this._isReverse=!1,this._destroyed=!1,this.hasChildren=!1,this.isPlaying=!1,this.hasCompleted=!1}return t.prototype.addElement=function(t){if(null!=t)if(t.length>0)for(var e=0;e<t.length;e++)this._addEl(t[e]);else this._addEl(t);return this},t.prototype._addEl=function(t){1===t.nodeType&&(this._elements=this._elements||[]).push(t)},t.prototype.add=function(t){return t.parent=this,this.hasChildren=!0,(this._childAnimations=this._childAnimations||[]).push(t),this},t.prototype.getDuration=function(e){if(t.animated){if(e&&void 0!==e.duration)return e.duration;if(void 0!==this._duration)return this._duration;if(this.parent)return this.parent.getDuration()}return 0},t.prototype.isRoot=function(){return!this.parent},t.prototype.duration=function(t){return this._duration=t,this},t.prototype.getEasing=function(){return this._isReverse&&void 0!==this._reversedEasingName?this._reversedEasingName:void 0!==this._easingName?this._easingName:this.parent&&this.parent.getEasing()||null},t.prototype.easing=function(t){return this._easingName=t,this},t.prototype.easingReverse=function(t){return this._reversedEasingName=t,this},t.prototype.from=function(t,e){return this._addProp("from",t,e),this},t.prototype.to=function(t,e,i){void 0===i&&(i=!1);var s=this._addProp("to",t,e);return i&&this.afterClearStyles([s.trans?"transform":t]),this},t.prototype.fromTo=function(t,e,i,s){return this.from(t,e).to(t,i,s)},t.prototype._getProp=function(t){if(this._fxProperties)return this._fxProperties.find(function(e){return e.effectName===t})},t.prototype._addProp=function(t,e,i){var s=this._getProp(e);if(!s){var r=1===TRANSFORM_PROPS[e];s={effectName:e,trans:r,wc:r?"transform":e},(this._fxProperties=this._fxProperties||[]).push(s)}var n={val:i,num:0,effectUnit:""};if(s[t]=n,"string"==typeof i&&i.indexOf(" ")<0){var o=i.match(CSS_VALUE_REGEX);if(o){var a=parseFloat(o[1]);isNaN(a)||(n.num=a),n.effectUnit=o[0]!==o[2]?o[2]:""}}else"number"==typeof i&&(n.num=i);return s},t.prototype.beforeAddClass=function(t){return(this._beforeAddClasses=this._beforeAddClasses||[]).push(t),this},t.prototype.beforeRemoveClass=function(t){return(this._beforeRemoveClasses=this._beforeRemoveClasses||[]).push(t),this},t.prototype.beforeStyles=function(t){return this._beforeStyles=t,this},t.prototype.beforeClearStyles=function(t){this._beforeStyles=this._beforeStyles||{};for(var e=0,i=t;e<i.length;e++)this._beforeStyles[i[e]]="";return this},t.prototype.beforeAddRead=function(t){return(this._readCallbacks=this._readCallbacks||[]).push(t),this},t.prototype.beforeAddWrite=function(t){return(this._writeCallbacks=this._writeCallbacks||[]).push(t),this},t.prototype.afterAddClass=function(t){return(this._afterAddClasses=this._afterAddClasses||[]).push(t),this},t.prototype.afterRemoveClass=function(t){return(this._afterRemoveClasses=this._afterRemoveClasses||[]).push(t),this},t.prototype.afterStyles=function(t){return this._afterStyles=t,this},t.prototype.afterClearStyles=function(t){this._afterStyles=this._afterStyles||{};for(var e=0,i=t;e<i.length;e++)this._afterStyles[i[e]]="";return this},t.prototype.play=function(t){var e=this;this._destroyed||(this._isAsync=this._hasDuration(t),this._clearAsync(),this._playInit(t),raf(function(){raf(function(){e._playDomInspect(t)})}))},t.prototype.playAsync=function(t){var e=this;return new Promise(function(i){return e.onFinish(i,{oneTimeCallback:!0,clearExistingCallbacks:!0}),e.play(t),e})},t.prototype.playSync=function(){if(!this._destroyed){var t={duration:0};this._isAsync=!1,this._clearAsync(),this._playInit(t),this._playDomInspect(t)}},t.prototype._playInit=function(t){this._hasTweenEffect=!1,this.isPlaying=!0,this.hasCompleted=!1,this._hasDur=this.getDuration(t)>DURATION_MIN;var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playInit(t);this._hasDur&&(this._progress(0),this._willChange(!0))},t.prototype._playDomInspect=function(t){var e=this;this._beforeAnimation();var i=this.getDuration(t);this._isAsync&&this._asyncEnd(i,!0),this._playProgress(t),this._isAsync&&!this._destroyed&&raf(function(){e._playToStep(1)})},t.prototype._playProgress=function(t){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playProgress(t);this._hasDur?this._setTrans(this.getDuration(t),!1):(this._progress(1),this._setAfterStyles(),this._didFinish(!0))},t.prototype._playToStep=function(t){if(!this._destroyed){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playToStep(t);this._hasDur&&this._progress(t)}},t.prototype._asyncEnd=function(t,e){var i=this;i._unregisterTrnsEnd=transitionEnd(i._transEl(),function(){i._clearAsync(),i._playEnd(),i._didFinishAll(e,!0,!1)}),i._timerId=setTimeout(function(){i._timerId=void 0,i._clearAsync(),i._playEnd(e?1:0),i._didFinishAll(e,!0,!1)},t+TRANSITION_END_FALLBACK_PADDING_MS)},t.prototype._playEnd=function(t){var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i]._playEnd(t);this._hasDur&&(void 0!==t&&(this._setTrans(0,!0),this._progress(t)),this._setAfterStyles(),this._willChange(!1))},t.prototype._hasDuration=function(t){if(this.getDuration(t)>DURATION_MIN)return!0;var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)if(s[i]._hasDuration(t))return!0;return!1},t.prototype._hasDomReads=function(){if(this._readCallbacks&&this._readCallbacks.length>0)return!0;var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)if(i[e]._hasDomReads())return!0;return!1},t.prototype.stop=function(t){void 0===t&&(t=1),this._clearAsync(),this._hasDur=!0,this._playEnd(t)},t.prototype._clearAsync=function(){this._unregisterTrnsEnd&&this._unregisterTrnsEnd(),this._timerId&&clearTimeout(this._timerId),this._timerId=this._unregisterTrnsEnd=void 0},t.prototype._progress=function(t){var e,i=this._elements,s=this._fxProperties;if(i&&0!==i.length&&s&&!this._destroyed){this._isReverse&&(t=1-t);var r,n=0,o=0,a="";for(n=0;n<s.length;n++)if((r=s[n]).from&&r.to){var h=r.from.num,l=r.to.num,f=h!==l;if(f&&(this._hasTweenEffect=!0),0===t?e=r.from.val:1===t?e=r.to.val:f&&(e=(l-h)*t+h+r.to.effectUnit),null!==e){var _=r.effectName;if(r.trans)a+=_+"("+e+") ";else for(o=0;o<i.length;o++)i[o].style.setProperty(_,e)}}if(a.length>0)for((!this._isReverse&&1!==t||this._isReverse&&0!==t)&&(a+="translateZ(0px)"),n=0;n<i.length;n++)i[n].style.setProperty("transform",a)}},t.prototype._setTrans=function(t,e){var i=this._elements;if(i&&0!==i.length&&this._fxProperties)for(var s=e?"linear":this.getEasing(),r=t+"ms",n=0,o=i;n<o.length;n++){var a=o[n].style;t>0?(a.transitionDuration=r,null!==s&&(a.transitionTimingFunction=s)):a.transitionDuration="0"}},t.prototype._beforeAnimation=function(){this._fireBeforeReadFunc(),this._fireBeforeWriteFunc(),this._setBeforeStyles()},t.prototype._setBeforeStyles=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._setBeforeStyles();var s=this._elements;if(s&&0!==s.length&&!this._isReverse)for(var r=this._beforeAddClasses,n=this._beforeRemoveClasses,o=0,a=s;o<a.length;o++){var h=a[o],l=h.classList;if(r)for(var f=0,_=r;f<_.length;f++)l.add(_[f]);if(n)for(var p=0,c=n;p<c.length;p++)l.remove(c[p]);if(this._beforeStyles)for(var u=0,d=Object.entries(this._beforeStyles);u<d.length;u++){var y=d[u];h.style.setProperty(y[0],y[1])}}},t.prototype._fireBeforeReadFunc=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._fireBeforeReadFunc();var s=this._readCallbacks;if(s)for(var r=0,n=s;r<n.length;r++)(0,n[r])()},t.prototype._fireBeforeWriteFunc=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._fireBeforeWriteFunc();var s=this._writeCallbacks;if(s)for(var r=0,n=s;r<n.length;r++)(0,n[r])()},t.prototype._setAfterStyles=function(){var t=this._elements;if(t)for(var e=0,i=t;e<i.length;e++){var s=i[e],r=s.classList;if(s.style.transitionDuration=s.style.transitionTimingFunction="",this._isReverse){var n=this._beforeAddClasses;if(n)for(var o=0,a=n;o<a.length;o++)r.remove(a[o]);var h=this._beforeRemoveClasses;if(h)for(var l=0,f=h;l<f.length;l++)r.add(f[l]);var _=this._beforeStyles;if(_)for(var p=0,c=Object.keys(_);p<c.length;p++)s.style.removeProperty(c[p])}else{var u=this._afterAddClasses;if(u)for(var d=0,y=u;d<y.length;d++)r.add(y[d]);var v=this._afterRemoveClasses;if(v)for(var m=0,g=v;m<g.length;m++)r.remove(g[m]);var A=this._afterStyles;if(A)for(var b=0,C=Object.entries(A);b<C.length;b++){var E=C[b];s.style.setProperty(E[0],E[1])}}}},t.prototype._willChange=function(t){var e,i,s=this._fxProperties;if(t&&s){e=[];for(var r=0,n=s;r<n.length;r++){var o=n[r].wc;"webkitTransform"===o?e.push("transform","-webkit-transform"):void 0!==o&&e.push(o)}i=e.join(",")}else i="";var a=this._elements;if(a)for(var h=0,l=a;h<l.length;h++)l[h].style.setProperty("will-change",i)},t.prototype.progressStart=function(){this._clearAsync(),this._beforeAnimation(),this._progressStart()},t.prototype._progressStart=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e]._progressStart();this._setTrans(0,!0),this._willChange(!0)},t.prototype.progressStep=function(t){t=Math.min(1,Math.max(0,t));var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i].progressStep(t);this._progress(t)},t.prototype.progressEnd=function(t,e,i){var s=this;void 0===i&&(i=-1),this._isReverse&&(e=1-e);var r=t?1:0,n=Math.abs(e-r);i<0?i=this._duration||0:n<.05&&(i=0),this._isAsync=i>30,this._progressEnd(t,r,i,this._isAsync),this._isAsync&&(this._asyncEnd(i,t),this._destroyed||raf(function(){s._playToStep(r)}))},t.prototype._progressEnd=function(t,e,i,s){var r=this._childAnimations;if(r)for(var n=0,o=r;n<o.length;n++)o[n]._progressEnd(t,e,i,s);s?(this.isPlaying=!0,this.hasCompleted=!1,this._hasDur=!0,this._willChange(!0),this._setTrans(i,!1)):(this._progress(e),this._willChange(!1),this._setAfterStyles(),this._didFinish(t))},t.prototype.onFinish=function(t,e){return e&&e.clearExistingCallbacks&&(this._onFinishCallbacks=this._onFinishOneTimeCallbacks=void 0),e&&e.oneTimeCallback?(this._onFinishOneTimeCallbacks=this._onFinishOneTimeCallbacks||[],this._onFinishOneTimeCallbacks.push(t)):(this._onFinishCallbacks=this._onFinishCallbacks||[],this._onFinishCallbacks.push(t)),this},t.prototype._didFinishAll=function(t,e,i){var s=this._childAnimations;if(s)for(var r=0,n=s;r<n.length;r++)n[r]._didFinishAll(t,e,i);(e&&this._isAsync||i&&!this._isAsync)&&this._didFinish(t)},t.prototype._didFinish=function(t){if(this.isPlaying=!1,this.hasCompleted=t,this._onFinishCallbacks)for(var e=0,i=this._onFinishCallbacks;e<i.length;e++)(0,i[e])(this);if(this._onFinishOneTimeCallbacks){for(var s=0,r=this._onFinishOneTimeCallbacks;s<r.length;s++)(0,r[s])(this);this._onFinishOneTimeCallbacks.length=0}},t.prototype.reverse=function(t){void 0===t&&(t=!0);var e=this._childAnimations;if(e)for(var i=0,s=e;i<s.length;i++)s[i].reverse(t);return this._isReverse=!!t,this},t.prototype.destroy=function(){this._didFinish(!1),this._destroyed=!0;var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++)i[e].destroy();this._clearAsync(),this._elements&&(this._elements.length=0),this._readCallbacks&&(this._readCallbacks.length=0),this._writeCallbacks&&(this._writeCallbacks.length=0),this.parent=void 0,this._childAnimations&&(this._childAnimations.length=0),this._onFinishCallbacks&&(this._onFinishCallbacks.length=0),this._onFinishOneTimeCallbacks&&(this._onFinishOneTimeCallbacks.length=0)},t.prototype._transEl=function(){var t=this._childAnimations;if(t)for(var e=0,i=t;e<i.length;e++){var s=i[e]._transEl();if(s)return s}return this._hasTweenEffect&&this._hasDur&&void 0!==this._elements&&this._elements.length>0?this._elements[0]:null},t}();Animator.animated=!0;var AnimationControllerImpl=function(){function t(){}return t.prototype.create=function(t,e,i){return Animator.animated=this.config.getBoolean("animated",!0),t?t(Animator,e,i):Promise.resolve(new Animator)},Object.defineProperty(t,"is",{get:function(){return"ion-animation-controller"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{config:{context:"config"},create:{method:!0}}},enumerable:!0,configurable:!0}),t}();
+var Button=function(){function t(){var t=this;this.keyFocus=!1,this.buttonType="button",this.disabled=!1,this.strong=!1,this.type="button",this.onFocus=function(){t.ionFocus.emit()},this.onKeyUp=function(){t.keyFocus=!0},this.onBlur=function(){t.keyFocus=!1,t.ionBlur.emit()},this.onClick=function(e){if("button"===t.type)return Object(_chunk_b9ec67ac_js__WEBPACK_IMPORTED_MODULE_2__["i"])(t.win,t.href,e,t.routerDirection);if(Object(_chunk_c23403d0_js__WEBPACK_IMPORTED_MODULE_1__["c"])(t.el)){var n=t.el.closest("form");if(n){e.preventDefault();var o=document.createElement("button");o.type=t.type,o.style.display="none",n.appendChild(o),o.click(),o.remove()}}return Promise.resolve(!1)}}return t.prototype.componentWillLoad=function(){void 0===this.fill&&(this.fill=this.el.closest("ion-buttons")?"clear":"solid")},t.prototype.hostData=function(){var t,e=this,n=e.buttonType,o=e.keyFocus,r=e.disabled,i=e.expand,s=e.fill,a=e.shape,l=e.size,c=e.strong;return{"ion-activatable":!0,class:Object.assign({},Object(_chunk_b9ec67ac_js__WEBPACK_IMPORTED_MODULE_2__["h"])(e.color),(t={},t[n]=!0,t[n+"-"+i]=!!i,t[n+"-"+l]=!!l,t[n+"-"+a]=!!a,t[n+"-"+s]=!!s,t[n+"-strong"]=c,t.focused=o,t["button-disabled"]=r,t))}},t.prototype.render=function(){var t=void 0===this.href?"button":"a";return Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])(t,Object.assign({},"button"===t?{type:this.type}:{href:this.href},{class:"button-native",disabled:this.disabled,onFocus:this.onFocus,onKeyUp:this.onKeyUp,onBlur:this.onBlur,onClick:this.onClick}),Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span",{class:"button-inner"},Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot",{name:"icon-only"}),Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot",{name:"start"}),Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot",null),Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot",{name:"end"})),"md"===this.mode&&Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect",null))},Object.defineProperty(t,"is",{get:function(){return"ion-button"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"encapsulation",{get:function(){return"shadow"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{buttonType:{type:String,attr:"button-type",mutable:!0},color:{type:String,attr:"color"},disabled:{type:Boolean,attr:"disabled",reflectToAttr:!0},el:{elementRef:!0},expand:{type:String,attr:"expand",reflectToAttr:!0},fill:{type:String,attr:"fill",reflectToAttr:!0,mutable:!0},href:{type:String,attr:"href"},keyFocus:{state:!0},mode:{type:String,attr:"mode"},routerDirection:{type:String,attr:"router-direction"},shape:{type:String,attr:"shape",reflectToAttr:!0},size:{type:String,attr:"size",reflectToAttr:!0},strong:{type:Boolean,attr:"strong"},type:{type:String,attr:"type"},win:{context:"window"}}},enumerable:!0,configurable:!0}),Object.defineProperty(t,"events",{get:function(){return[{name:"ionFocus",method:"ionFocus",bubbles:!0,cancelable:!0,composed:!0},{name:"ionBlur",method:"ionBlur",bubbles:!0,cancelable:!0,composed:!0}]},enumerable:!0,configurable:!0}),Object.defineProperty(t,"style",{get:function(){return":host{--width:auto;--overflow:hidden;--ripple-color:currentColor;display:inline-block;color:var(--color);font-family:var(--ion-font-family,inherit);pointer-events:auto;text-align:center;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:top;vertical-align:-webkit-baseline-middle;-webkit-font-kerning:none;font-kerning:none}:host(.button-disabled){pointer-events:none}:host(.button-solid){--background:var(--ion-color-primary,#3880ff);--background-activated:var(--ion-color-primary-shade,#3171e0);--background-focused:var(--ion-color-primary-shade,#3171e0);--color:var(--ion-color-primary-contrast,#fff);--color-activated:var(--ion-color-primary-contrast,#fff);--color-focused:var(--ion-color-primary-contrast,#fff)}:host(.button-solid.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}:host(.button-solid.ion-color.activated) .button-native,:host(.button-solid.ion-color.focused) .button-native{background:var(--ion-color-shade)}:host(.button-outline){--border-color:var(--ion-color-primary,#3880ff);--background:transparent;--color:var(--ion-color-primary,#3880ff);--color-focused:var(--ion-color-primary,#3880ff)}:host(.button-outline.ion-color) .button-native{border-color:var(--ion-color-base);background:transparent;color:var(--ion-color-base)}:host(.button-outline.focused.ion-color) .button-native{background:rgba(var(--ion-color-base-rgb),.1);color:var(--ion-color-base)}:host(.button-clear){--border-width:0;--background:transparent;--color:var(--ion-color-primary,#3880ff)}:host(.button-clear.ion-color) .button-native{background:transparent;color:var(--ion-color-base)}:host(.button-clear.focused.ion-color) .button-native{background:rgba(var(--ion-color-base-rgb),.1);color:var(--ion-color-base)}:host(.button-clear.activated.ion-color) .button-native{background:transparent}:host(.button-block){display:block}:host(.button-block) .button-native{margin-left:0;margin-right:0;display:block;width:100%;clear:both;contain:strict}:host(.button-block) .button-native:after{clear:both}:host(.button-full){display:block}:host(.button-full) .button-native{margin-left:0;margin-right:0;display:block;width:100%;contain:strict}:host(.button-full:not(.button-round)) .button-native{border-radius:0;border-right-width:0;border-left-width:0}.button-native{border-radius:var(--border-radius);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin:var(--margin-top) var(--margin-end) var(--margin-bottom) var(--margin-start);padding:var(--padding-top) var(--padding-end) var(--padding-bottom) var(--padding-start);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;display:block;position:relative;width:var(--width);height:var(--height);-webkit-transition:var(--transition);transition:var(--transition);border-width:var(--border-width);border-style:var(--border-style);border-color:var(--border-color);outline:none;background:var(--background);line-height:1;-webkit-box-shadow:var(--box-shadow);box-shadow:var(--box-shadow);contain:content;cursor:pointer;opacity:var(--opacity);overflow:var(--overflow);z-index:0;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none}.button-native[disabled]{cursor:default;opacity:.5;pointer-events:none}:host(.focused) .button-native{background:var(--background-focused);color:var(--color-focused)}:host(.activated) .button-native{background:var(--background-activated);color:var(--color-activated)}.button-inner{display:-ms-flexbox;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%}::slotted(ion-icon){font-size:1.4em;pointer-events:none}::slotted(ion-icon[slot=start]){margin:0 .3em 0 -.3em}::slotted(ion-icon[slot=end]){margin:0 -.2em 0 .3em}::slotted(ion-icon[slot=icon-only]){font-size:1.8em}ion-ripple-effect{color:var(--ripple-color)}:host{--border-radius:12px;--margin-top:4px;--margin-bottom:4px;--margin-start:2px;--margin-end:2px;--padding-top:0;--padding-bottom:0;--padding-start:1em;--padding-end:1em;--height:2.8em;--transition:background-color,opacity 100ms linear;font-size:16px;font-weight:500;letter-spacing:-.03em}\@media (any-hover:hover){:host(.button-solid:hover){--opacity:0.8}}:host(.button-solid.activated){--opacity:1}:host(.button-outline){--border-radius:12px;--border-width:1px;--border-style:solid;--background-activated:var(--ion-color-primary,#3880ff);--background-focused:rgba(var(--ion-color-primary-rgb,56,128,255),0.1);--color-activated:var(--ion-color-primary-contrast,#fff)}:host(.button-outline.activated.ion-color) .button-native{background:var(--ion-color-base);color:var(--ion-color-contrast)}\@media (any-hover:hover){:host(.button-clear:hover){--opacity:0.6}}:host(.button-clear.activated){--opacity:0.4}:host(.button-clear){--background-activated:transparent;--background-focused:rgba(var(--ion-color-primary-rgb,56,128,255),0.1);--color-activated:var(--ion-color-primary,#3880ff);--color-focused:var(--ion-color-primary,#3880ff)}:host(.button-round){--border-radius:64px;--padding-top:0;--padding-start:26px;--padding-end:26px;--padding-bottom:0}:host(.button-large){--border-radius:14px;--padding-top:0;--padding-start:1em;--padding-end:1em;--padding-bottom:0;--height:2.8em;font-size:20px}:host(.button-small){--border-radius:8px;--padding-top:0;--padding-start:0.9em;--padding-end:0.9em;--padding-bottom:0;--height:2.1em;font-size:13px}:host(.button-strong){font-weight:600}"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"styleMode",{get:function(){return"ios"},enumerable:!0,configurable:!0}),t}();function getName(t,e,n,o){return e=(e||"md").toLowerCase(),n&&"ios"===e?t=n.toLowerCase():o&&"md"===e?t=o.toLowerCase():t&&(t=t.toLowerCase(),/^md-|^ios-|^logo-/.test(t)||(t=e+"-"+t)),"string"!=typeof t||""===t.trim()?null:""!==t.replace(/[a-z]|-|\d/gi,"")?null:t}function getSrc(t){return"string"==typeof t&&(t=t.trim()).length>0&&/(\/|\.)/.test(t)?t:null}function isValid(t){if(1===t.nodeType){if("script"===t.nodeName.toLowerCase())return!1;for(var e=0;e<t.attributes.length;e++){var n=t.attributes[e].value;if("string"==typeof n&&0===n.toLowerCase().indexOf("on"))return!1}for(e=0;e<t.childNodes.length;e++)if(!isValid(t.childNodes[e]))return!1}return!0}var Icon=function(){function t(){this.isVisible=!1,this.lazy=!1}return t.prototype.componentWillLoad=function(){var t=this;this.waitUntilVisible(this.el,"50px",function(){t.isVisible=!0,t.loadIcon()})},t.prototype.componentDidUnload=function(){this.io&&(this.io.disconnect(),this.io=void 0)},t.prototype.waitUntilVisible=function(t,e,n){var o=this;if(this.lazy&&this.win&&this.win.IntersectionObserver){var r=this.io=new this.win.IntersectionObserver(function(t){t[0].isIntersecting&&(r.disconnect(),o.io=void 0,n())},{rootMargin:e});r.observe(t)}else n()},t.prototype.loadIcon=function(){var t=this;if(!this.isServer&&this.isVisible){var e=this.getUrl();e&&getSvgContent(this.doc,e,"s-ion-icon").then(function(e){return t.svgContent=e})}if(!this.ariaLabel){var n=getName(this.name,this.mode,this.ios,this.md);n&&(this.ariaLabel=n.replace("ios-","").replace("md-","").replace(/\-/g," "))}},t.prototype.getUrl=function(){var t=getSrc(this.src);return t||((t=getName(this.name,this.mode,this.ios,this.md))?this.getNamedUrl(t):(t=getSrc(this.icon))?t:(t=getName(this.icon,this.mode,this.ios,this.md))?this.getNamedUrl(t):null)},t.prototype.getNamedUrl=function(t){return this.resourcesUrl+"svg/"+t+".svg"},t.prototype.hostData=function(){var t;return{role:"img",class:Object.assign({},createColorClasses$1(this.color),(t={},t["icon-"+this.size]=!!this.size,t))}},t.prototype.render=function(){return Object(_ionic_core_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div",!this.isServer&&this.svgContent?{class:"icon-inner",innerHTML:this.svgContent}:{class:"icon-inner"})},Object.defineProperty(t,"is",{get:function(){return"ion-icon"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"encapsulation",{get:function(){return"shadow"},enumerable:!0,configurable:!0}),Object.defineProperty(t,"properties",{get:function(){return{ariaLabel:{type:String,attr:"aria-label",reflectToAttr:!0,mutable:!0},color:{type:String,attr:"color"},doc:{context:"document"},el:{elementRef:!0},icon:{type:String,attr:"icon",watchCallbacks:["loadIcon"]},ios:{type:String,attr:"ios"},isServer:{context:"isServer"},isVisible:{state:!0},lazy:{type:Boolean,attr:"lazy"},md:{type:String,attr:"md"},mode:{type:String,attr:"mode"},name:{type:String,attr:"name",watchCallbacks:["loadIcon"]},resourcesUrl:{context:"resourcesUrl"},size:{type:String,attr:"size"},src:{type:String,attr:"src",watchCallbacks:["loadIcon"]},svgContent:{state:!0},win:{context:"window"}}},enumerable:!0,configurable:!0}),Object.defineProperty(t,"style",{get:function(){return":host{display:inline-block;width:1em;height:1em;contain:strict;-webkit-box-sizing:content-box!important;box-sizing:content-box!important}:host(.ion-color){color:var(--ion-color-base)!important}:host(.icon-small){font-size:var(--ion-icon-size-small,18px)!important}:host(.icon-large){font-size:var(--ion-icon-size-large,32px)!important}.icon-inner,svg{display:block;fill:currentColor;stroke:currentColor;height:100%;width:100%}:host(.ion-color-primary){--ion-color-base:var(--ion-color-primary,#3880ff)}:host(.ion-color-secondary){--ion-color-base:var(--ion-color-secondary,#0cd1e8)}:host(.ion-color-tertiary){--ion-color-base:var(--ion-color-tertiary,#f4a942)}:host(.ion-color-success){--ion-color-base:var(--ion-color-success,#10dc60)}:host(.ion-color-warning){--ion-color-base:var(--ion-color-warning,#ffce00)}:host(.ion-color-danger){--ion-color-base:var(--ion-color-danger,#f14141)}:host(.ion-color-light){--ion-color-base:var(--ion-color-light,#f4f5f8)}:host(.ion-color-medium){--ion-color-base:var(--ion-color-medium,#989aa2)}:host(.ion-color-dark){--ion-color-base:var(--ion-color-dark,#222428)}"},enumerable:!0,configurable:!0}),t}(),requests=new Map;function getSvgContent(t,e,n){var o=requests.get(e);return o||(o=fetch(e,{cache:"force-cache"}).then(function(t){return t.ok?t.text():Promise.resolve(null)}).then(function(e){return validateContent(t,e,n)}),requests.set(e,o)),o}function validateContent(t,e,n){if(e){var o=t.createDocumentFragment(),r=t.createElement("div");r.innerHTML=e,o.appendChild(r);for(var i=r.childNodes.length-1;i>=0;i--)"svg"!==r.childNodes[i].nodeName.toLowerCase()&&r.removeChild(r.childNodes[i]);var s=r.firstElementChild;if(s&&"svg"===s.nodeName.toLowerCase()&&(n&&s.setAttribute("class",n),isValid(s)))return r.innerHTML}return""}function createColorClasses$1(t){var e;return t?((e={"ion-color":!0})["ion-color-"+t]=!0,e):null}
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/chunk-b9ec67ac.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/chunk-b9ec67ac.js ***!
+  \***********************************************************************/
+/*! exports provided: a, b, c, d, e, f, g, h, i, j, k */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return attachComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return detachComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return hapticSelectionChanged; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hapticSelectionEnd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return hapticSelectionStart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return hapticSelection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getClassMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return createColorClasses; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hostContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return createThemedClasses; });
+/* harmony import */ var _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../polyfills/tslib.js */ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js");
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ * Built with http://stenciljs.com
+ */
+function attachComponent(e,t,n,r,i){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var o;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(a){switch(a.label){case 0:if(e)return[2,e.attachViewToDom(t,n,i,r)];if("string"!=typeof n&&!(n instanceof HTMLElement))throw new Error("framework delegate is missing");return o="string"==typeof n?t.ownerDocument.createElement(n):n,r&&r.forEach(function(e){return o.classList.add(e)}),i&&Object.assign(o,i),t.appendChild(o),o.componentOnReady?[4,o.componentOnReady()]:[3,2];case 1:a.sent(),a.label=2;case 2:return[2,o]}})})}function detachComponent(e,t){if(t){if(e)return e.removeViewFromDom(t.parentElement,t);t.remove()}return Promise.resolve()}function hapticSelection(){var e=window.TapticEngine;e&&e.selection()}function hapticSelectionStart(){var e=window.TapticEngine;e&&e.gestureSelectionStart()}function hapticSelectionChanged(){var e=window.TapticEngine;e&&e.gestureSelectionChanged()}function hapticSelectionEnd(){var e=window.TapticEngine;e&&e.gestureSelectionEnd()}function hostContext(e,t){return null!==t.closest(e)}function createColorClasses(e){var t;return"string"==typeof e&&e.length>0?((t={"ion-color":!0})["ion-color-"+e]=!0,t):void 0}function createThemedClasses(e,t){var n;return(n={})[t]=!0,n[t+"-"+e]=!!e,n}function getClassList(e){return void 0!==e?(Array.isArray(e)?e:e.split(" ")).filter(function(e){return null!=e}).map(function(e){return e.trim()}).filter(function(e){return""!==e}):[]}function getClassMap(e){var t={};return getClassList(e).forEach(function(e){return t[e]=!0}),t}function openURL(e,t,n,r){return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this,void 0,void 0,function(){var i;return _polyfills_tslib_js__WEBPACK_IMPORTED_MODULE_0__["__generator"](this,function(o){switch(o.label){case 0:return null==t||"#"===t[0]||-1!==t.indexOf("://")?[3,2]:(i=e.document.querySelector("ion-router"))?(null!=n&&n.preventDefault(),[4,i.componentOnReady()]):[3,2];case 1:return o.sent(),[2,i.push(t,r)];case 2:return[2,!1]}})})}
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/polyfills/tslib.js ***!
+  \******************************************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __await, __makeTemplateObject, __importStar, __importDefault */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+// REV: 9dd9aa322c893e5e0b3f1609b1126314ccf37bbb
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+  extendStatics = Object.setPrototypeOf ||
+      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+      function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+  return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+  extendStatics(d, b);
+  function __() { this.constructor = d; }
+  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+  __assign = Object.assign || function __assign(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+      return t;
+  }
+  return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+          t[p[i]] = s[p[i]];
+  return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+  return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+  return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+      function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+}
+
+function __generator(thisArg, body) {
+  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+  function verb(n) { return function (v) { return step([n, v]); }; }
+  function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while (_) try {
+          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+          if (y = 0, t) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+              case 0: case 1: t = op; break;
+              case 4: _.label++; return { value: op[1], done: false };
+              case 5: _.label++; y = op[1]; op = [0]; continue;
+              case 7: op = _.ops.pop(); _.trys.pop(); continue;
+              default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                  if (t[2]) _.ops.pop();
+                  _.trys.pop(); continue;
+          }
+          op = body.call(thisArg, _);
+      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+  }
+}
+
+function __exportStar(m, exports) {
+  for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+  if (m) return m.call(o);
+  return {
+      next: function () {
+          if (o && i >= o.length) o = void 0;
+          return { value: o && o[i++], done: !o };
+      }
+  };
+}
+
+function __read(o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o), r, ar = [], e;
+  try {
+      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+  }
+  catch (error) { e = { error: error }; }
+  finally {
+      try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+      }
+      finally { if (e) throw e.error; }
+  }
+  return ar;
+}
+
+function __spread() {
+  for (var ar = [], i = 0; i < arguments.length; i++)
+      ar = ar.concat(__read(arguments[i]));
+  return ar;
+}
+
+function __await(v) {
+  return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __makeTemplateObject(cooked, raw) {
+  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+  return cooked;
+};
+
+function __importStar(mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  result.default = mod;
+  return result;
+}
+
+function __importDefault(mod) {
+  return (mod && mod.__esModule) ? mod : { default: mod };
+}
 
 /***/ })
 

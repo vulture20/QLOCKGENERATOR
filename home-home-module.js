@@ -232,7 +232,7 @@ module.exports = "<ion-list>\n  <ion-item *ngFor=\"let symbol of this.alarmSymbo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zaW1vbmdvbG1zL0RldmVsb3BtZW50L1FMT0NLR0VORVJBVE9SL3NyYy9hcHAvY29tcG9uZW50cy9hbGFybS9zeW1ib2xzL3N5bWJvbHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSwyQkFBMEI7RUFDMUIsV0FBVSxFQUNiIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9hbGFybS9zeW1ib2xzL3N5bWJvbHMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWxhcm0tc3ltYm9sLXZhbHVlIHtcbiAgICBmb250LWZhbWlseTogQWxhcm0tU3ltYm9scztcbiAgICB3aWR0aDogMTAlO1xufSJdfQ== */"
+module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQxLjEvd29yay8xL3Mvc3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUEwQjtFQUMxQixXQUFVLEVBQ2IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGFybS1zeW1ib2wtdmFsdWUge1xuICAgIGZvbnQtZmFtaWx5OiBBbGFybS1TeW1ib2xzO1xuICAgIHdpZHRoOiAxMCU7XG59Il19 */"
 
 /***/ }),
 
@@ -783,7 +783,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-butt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zaW1vbmdvbG1zL0RldmVsb3BtZW50L1FMT0NLR0VORVJBVE9SL3NyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGlCQUFnQixFQUNuQiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdGV4dGFyZWEge1xuICAgIHdoaXRlLXNwYWNlOiBwcmU7XG59Il19 */"
+module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQxLjEvd29yay8xL3Mvc3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10ZXh0YXJlYSB7XG4gICAgd2hpdGUtc3BhY2U6IHByZTtcbn0iXX0= */"
 
 /***/ }),
 
@@ -983,7 +983,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeFrontHeight()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.generalFrontHeight != event.detail.value)) {
-            this.generalFrontHeight = event.detail.value;
+            this.generalFrontHeight = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -992,7 +992,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeFrontWidth()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.generalFrontWidth != event.detail.value)) {
-            this.generalFrontWidth = event.detail.value;
+            this.generalFrontWidth = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1009,11 +1009,6 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.onChangeMinutesPlacement = function (event) {
         if (event === void 0) { event = null; }
         console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
-        // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        // if ((event != null)) {
-        //   console.log("HomePage onChangeMinutesPlacement() IF", event, this.minutesPlacement);
-        //   this.minutesPlacement = event.detail.value;
-        // }
         this.generateFrontPreview();
     };
     HomePage.prototype.onClickMinutesPlacement = function (event) {
@@ -1051,7 +1046,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMinutesRadius()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.minutesRadius != event.detail.value)) {
-            this.minutesRadius = event.detail.value;
+            this.minutesRadius = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1060,7 +1055,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMinutesDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.minutesDistanceX != event.detail.value)) {
-            this.minutesDistanceX = event.detail.value;
+            this.minutesDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1069,7 +1064,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMinutesDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.minutesDistanceY != event.detail.value)) {
-            this.minutesDistanceY = event.detail.value;
+            this.minutesDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1110,7 +1105,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeAlarmSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.alarmSize != event.detail.value)) {
-            this.alarmSize = event.detail.value;
+            this.alarmSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1119,7 +1114,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeAlarmDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.alarmDistanceX != event.detail.value)) {
-            this.alarmDistanceX = event.detail.value;
+            this.alarmDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1128,7 +1123,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeAlarmDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.alarmDistanceY != event.detail.value)) {
-            this.alarmDistanceY = event.detail.value;
+            this.alarmDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1137,7 +1132,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMatrixColumns()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.matrixColumns != event.detail.value)) {
-            this.matrixColumns = event.detail.value;
+            this.matrixColumns = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1146,7 +1141,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMatrixRows()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.matrixRows != event.detail.value)) {
-            this.matrixRows = event.detail.value;
+            this.matrixRows = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1155,7 +1150,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMatrixDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.matrixDistanceX != event.detail.value)) {
-            this.matrixDistanceX = event.detail.value;
+            this.matrixDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1164,7 +1159,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMatrixDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.matrixDistanceY != event.detail.value)) {
-            this.matrixDistanceY = event.detail.value;
+            this.matrixDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1247,7 +1242,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeMatrixFontSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.matrixFontSize != event.detail.value)) {
-            this.matrixFontSize = event.detail.value;
+            this.matrixFontSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1265,7 +1260,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeLogoTextSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.logoTextSize != event.detail.value)) {
-            this.logoTextSize = event.detail.value;
+            this.logoTextSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1274,7 +1269,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeLogoDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.logoDistanceX != event.detail.value)) {
-            this.logoDistanceX = event.detail.value;
+            this.logoDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
@@ -1283,7 +1278,7 @@ var HomePage = /** @class */ (function () {
         // console.log("HomePage onChangeLogoDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
         if ((event != null) && (this.logoDistanceY != event.detail.value)) {
-            this.logoDistanceY = event.detail.value;
+            this.logoDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
     };
