@@ -4,6 +4,8 @@
 
 # QLOCKGENERATOR
 [![contributions welcome](https://img.shields.io/badge/Ionic-v4-3880ff.svg)](https://beta.ionicframework.com/docs)
+[![Build status](https://dev.azure.com/golms/QLOCKGENERATOR/_apis/build/status/QLOCKGENERATOR-CI)](https://dev.azure.com/golms/QLOCKGENERATOR/_build/latest?definitionId=9)
+[![Deployment status](https://vsrm.dev.azure.com/golms/_apis/public/Release/badge/31cafddc-34b7-4072-8682-8318481b7ff8/1/1)](https://vsrm.dev.azure.com/golms/_apis/public/Release/badge/31cafddc-34b7-4072-8682-8318481b7ff8/1/1)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)](https://github.com/SimonGolms/QLOCKGENERATOR/issues)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d3da8203df839ea0fda2/maintainability)](https://codeclimate.com/github/SimonGolms/QLOCKGENERATOR/maintainability)
 [![Donate](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SYPW37BHKX4ZA)
