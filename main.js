@@ -2712,6 +2712,7 @@ var GeneratorService = /** @class */ (function () {
                             model.layer = "text";
                             models.push(model);
                         }
+                        resolve(models);
                     });
                 });
                 return [2 /*return*/, promise];
@@ -2755,7 +2756,7 @@ var GeneratorService = /** @class */ (function () {
                     case 5:
                         resultText = _a.sent();
                         if (!(logoText.length > 0)) return [3 /*break*/, 7];
-                        logoGrid = this.calculateAlarmCoordinate(frontHeight, frontWidth, logoDistanceX, logoDistanceY);
+                        logoGrid = this.calculateLogoCoordinate(frontHeight, frontWidth, logoDistanceX, logoDistanceY);
                         return [4 /*yield*/, this.generateFrontModelAddLogo(matrixFont, logoText, logoTextSize, logoGrid).then(function (models) {
                                 front.models = front.models.concat(models);
                             })];
