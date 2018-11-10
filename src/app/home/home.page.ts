@@ -449,7 +449,7 @@ export class HomePage {
         let svgBlob = new Blob([svg], {
           type: "image/svg+xml"
         });
-        saveAs(svgBlob, filename);
+        saveAs(svgBlob, filename + ".svg");
       });
   }
 
@@ -465,7 +465,7 @@ export class HomePage {
       this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
       this.colorFront, this.colorLight).then((dxf: string) => {
         let blob = new Blob([dxf], { type: "dxf/dxf;charset=utf-8" });
-        saveAs(blob, filename);
+        saveAs(blob, filename + ".dxf");
       });
   }
 
@@ -480,7 +480,7 @@ export class HomePage {
       this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
       this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
       this.colorFront, this.colorLight).then((pdf) => {
-        saveAs(pdf, filename);
+        saveAs(pdf, filename + ".pdf");
       });
   }
 
