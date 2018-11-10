@@ -1316,20 +1316,20 @@ var HomePage = /** @class */ (function () {
             var svgBlob = new Blob([svg], {
                 type: "image/svg+xml"
             });
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(svgBlob, filename);
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(svgBlob, filename + ".svg");
         });
     };
     HomePage.prototype.exportAsDXF = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
         this.generator.generateDXF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (dxf) {
             var blob = new Blob([dxf], { type: "dxf/dxf;charset=utf-8" });
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(blob, filename);
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(blob, filename + ".dxf");
         });
     };
     HomePage.prototype.exportAsPDF = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
         this.generator.generatePDF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (pdf) {
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(pdf, filename);
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(pdf, filename + ".pdf");
         });
     };
     HomePage.prototype.exportAsPNG = function () {
