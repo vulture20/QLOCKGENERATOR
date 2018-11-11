@@ -488,24 +488,27 @@ export class GeneratorService {
      * which leads to a wrong centered representation.
      */
     switch (letter) {
-      // CZ
       case "Á":
       case "Ä":
       case "Ă":
+      case "Å":
         char = new makerjs.models.Text(font, "A", matrixFontSize);
         size = makerjs.measure.modelExtents(char);
         break;
       case "Č":
+      case "Ç":
         char = new makerjs.models.Text(font, "C", matrixFontSize);
         size = makerjs.measure.modelExtents(char);
         break;
       case "Ě":
       case "É":
       case "Ê":
+      case "È":
         char = new makerjs.models.Text(font, "E", matrixFontSize);
         size = makerjs.measure.modelExtents(char);
         break;
       case "Ö":
+      case "Ó":
         char = new makerjs.models.Text(font, "O", matrixFontSize);
         size = makerjs.measure.modelExtents(char);
         break;
