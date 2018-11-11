@@ -2783,24 +2783,27 @@ var GeneratorService = /** @class */ (function () {
          * which leads to a wrong centered representation.
          */
         switch (letter) {
-            // CZ
             case "Á":
             case "Ä":
             case "Ă":
+            case "Å":
                 char = new makerjs__WEBPACK_IMPORTED_MODULE_4__["models"].Text(font, "A", matrixFontSize);
                 size = makerjs__WEBPACK_IMPORTED_MODULE_4__["measure"].modelExtents(char);
                 break;
             case "Č":
+            case "Ç":
                 char = new makerjs__WEBPACK_IMPORTED_MODULE_4__["models"].Text(font, "C", matrixFontSize);
                 size = makerjs__WEBPACK_IMPORTED_MODULE_4__["measure"].modelExtents(char);
                 break;
             case "Ě":
             case "É":
             case "Ê":
+            case "È":
                 char = new makerjs__WEBPACK_IMPORTED_MODULE_4__["models"].Text(font, "E", matrixFontSize);
                 size = makerjs__WEBPACK_IMPORTED_MODULE_4__["measure"].modelExtents(char);
                 break;
             case "Ö":
+            case "Ó":
                 char = new makerjs__WEBPACK_IMPORTED_MODULE_4__["models"].Text(font, "O", matrixFontSize);
                 size = makerjs__WEBPACK_IMPORTED_MODULE_4__["measure"].modelExtents(char);
                 break;
