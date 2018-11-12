@@ -2411,7 +2411,6 @@ var GeneratorService = /** @class */ (function () {
                     _this.generateFrontModel(frontHeight, frontWidth, frontMirror, minutesPlacement, minutesRadius, minutesDistanceX, minutesDistanceY, alarmSymbol, alarmSize, alarmDistanceX, alarmDistanceY, matrixColumns, matrixRows, matrixDistanceX, matrixDistanceY, matrixLanguages, matrixText, matrixFont, matrixFontSize, logoText, logoTextSize, logoDistanceX, logoDistanceY, colorFront, colorLight).then(function (front) {
                         var dxf = makerjs__WEBPACK_IMPORTED_MODULE_4__["exporter"].toDXF(front, {
                             units: makerjs__WEBPACK_IMPORTED_MODULE_4__["unitType"].Millimeter,
-                            usePOLYLINE: true
                         });
                         resolve(dxf);
                     });
