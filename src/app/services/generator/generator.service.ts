@@ -97,7 +97,8 @@ export class GeneratorService {
 
           let dxf = makerjs.exporter.toDXF(front, {
             units: makerjs.unitType.Millimeter,
-            usePOLYLINE: true
+            // Creates corrupt DXF file, see: https://github.com/Microsoft/maker.js/issues/324
+            // usePOLYLINE: true
           });
 
           resolve(dxf);
