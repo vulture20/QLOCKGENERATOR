@@ -90,7 +90,7 @@ export class HomePage {
     // console.log("HomePage onChangeFrontVariant()");
   }
 
-  protected async onClickFrontVariant() {
+  protected async onClickFrontVariant(event: any = null) {
     // console.log("HomePage onClickFrontVariant()");
     const popover = await this.popoverController.create({
       component: VariantsComponent,
@@ -161,12 +161,12 @@ export class HomePage {
   }
 
   protected onChangeMinutesPlacement(event: any = null) {
-    console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
+    //  console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
     this.generateFrontPreview();
   }
 
   protected async onClickMinutesPlacement(event: any = null) {
-    console.log("HomePage onClickMinutesPlacement()", event);
+    //  console.log("HomePage onClickMinutesPlacement()", event);
     const popover = await this.popoverController.create({
       component: PlacementsComponent,
       componentProps: { select: this.minutesPlacement },
@@ -175,7 +175,7 @@ export class HomePage {
     });
 
     popover.onDidDismiss().then((data) => {
-      console.log("HomePage onClickMinutesPlacement() - popover.onDidDismiss()", data);
+      //  console.log("HomePage onClickMinutesPlacement() - popover.onDidDismiss()", data);
       if (data.role == "select") {
         this.minutesPlacement = data.data;
         this.generateFrontPreview();

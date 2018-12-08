@@ -27,7 +27,7 @@
           <ion-col size="12">
             <ion-item>
               <ion-label position="stacked">Variante</ion-label>
-              <ion-input [(ngModel)]="this.generalFrontVariant.data.info.model" readonly="true" (ionFocus)="this.onClickFrontVariant()">
+              <ion-input [(ngModel)]="this.generalFrontVariant.data.info.model" readonly="true" (ionFocus)="this.onClickFrontVariant($event)">
                 <ion-icon name="arrow-dropdown"></ion-icon>
               </ion-input>
             </ion-item>
