@@ -1,11 +1,13 @@
+import { FONTS } from './../configs/fonts';
+import { ILanguage, IVariant, IVariantGroupedBySupplier, IFont, IFontAlarm, FontCategory } from './../core/core.module';
 import { IPlacement, PlacementsService } from './../services/placements/placements.service';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
-import { FontsService, IFont, FontCategory, IFontAlarm } from './../services/fonts/fonts.service';
+import { FontsService, } from './../services/fonts/fonts.service';
 import { GeneratorService } from './../services/generator/generator.service';
-import { LanguagesService, ILanguage } from '../services/languages/languages.service';
-import { VariantsService, IVariant, IVariantGroupedBySupplier } from '../services/variants/variants.service';
+import { LanguagesService } from './../services/languages/languages.service';
+import { VariantsService } from './../services/variants/variants.service';
 
 import { SymbolsComponent } from './../components/alarm/symbols/symbols.component';
 import { VariantsComponent } from './../components/general/variants/variants.component';
@@ -14,6 +16,7 @@ import { FontsComponent } from './../components/matrix/fonts/fonts.component';
 import { PlacementsComponent } from './../components/minutes/placements/placements.component';
 
 import { saveAs } from 'file-saver/FileSaver';
+import { DEFAULT_ALARM_SYMBOL_NONE, DEFAULT_ALARM_SYMBOL, DEFAULT_FONT, DEFAULT_VARIANT } from '../configs/defaults';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +28,7 @@ export class HomePage {
   @ViewChild('drawing') drawing: ElementRef;
 
   // Default settings
-  protected generalFrontVariant: IVariant;
+  protected generalFrontVariant: IVariant = DEFAULT_VARIANT;
   protected generalFrontVariants: IVariantGroupedBySupplier[] = [];
   protected generalFrontHeight: number = 450;
   protected generalFrontWidth: number = 450;
@@ -35,7 +38,7 @@ export class HomePage {
   protected minutesRadius: number = 1;
   protected minutesDistanceX: number = 25;
   protected minutesDistanceY: number = 25;
-  protected alarmSymbol: IFontAlarm = { id: "0", label: "Ohne", category: FontCategory.REGULAR, filename: null, path: null, value: "", }
+  protected alarmSymbol: IFontAlarm = DEFAULT_ALARM_SYMBOL_NONE;
   protected alarmSymbols: IFontAlarm[] = [];
   protected alarmSize: number = 11;
   protected alarmDistanceX: number = 225;
@@ -47,8 +50,8 @@ export class HomePage {
   protected matrixLanguage: ILanguage = { id: "DE", label: "DE Deutsch", value: "" };
   protected matrixLanguages: ILanguage[] = [];
   protected matrixText: string = "ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR";
-  protected matrixFont: IFont = { id: "4000", label: "DIN", category: FontCategory.REGULAR, filename: "7737a754866a4378500fbf0a6808fe54.ttf", path: "./assets/fonts/", };
-  protected matrixFonts: IFont[] = [];
+  protected matrixFont: IFont = DEFAULT_FONT;
+  protected matrixFonts: IFont[] = FONTS;
   protected matrixFontSize: number = 21;
   protected logoText: string = "";
   protected logoTextSize: number = 5.25;
@@ -59,7 +62,7 @@ export class HomePage {
 
   constructor(
     public generator: GeneratorService,
-    public languagesService: LanguagesService,
+    private languagesService: LanguagesService,
     public fontService: FontsService,
     public variantsService: VariantsService,
     public placementsService: PlacementsService,
@@ -83,7 +86,7 @@ export class HomePage {
 
   protected onClickGithubLogo() {
     // console.log("HomePage onClickGithubLogo()");
-    window.open("https://github.com/SimonGolms/QLOCKGENERATOR");
+    window.open('https://github.com/SimonGolms/QLOCKGENERATOR');
   }
 
   protected onChangeFrontVariant() {
@@ -101,7 +104,7 @@ export class HomePage {
 
     popover.onDidDismiss().then((data) => {
       // console.log("HomePage onClickFrontVariant() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      if (data.role === 'select') {
         this.generalFrontVariant = data.data;
 
         this.generalFrontHeight = this.generalFrontVariant.data.front.height;
@@ -110,10 +113,10 @@ export class HomePage {
         this.minutesRadius = this.generalFrontVariant.data.minutes.radius;
         this.minutesDistanceX = this.generalFrontVariant.data.minutes.distance.x;
         this.minutesDistanceY = this.generalFrontVariant.data.minutes.distance.y;
-        if (this.generalFrontVariant.data.alarm.show == true) {
-          this.alarmSymbol = this.fontService.getAlarmById(this.fontService.DEFAULT_ALARM_SYMBOL_ID);
+        if (this.generalFrontVariant.data.alarm.show === true) {
+          this.alarmSymbol = DEFAULT_ALARM_SYMBOL;
         } else {
-          this.alarmSymbol = this.fontService.getAlarmById(this.fontService.DEFAULT_ALARM_SYMBOL_NONE_ID);
+          this.alarmSymbol = DEFAULT_ALARM_SYMBOL_NONE;
         }
         this.alarmSize = this.generalFrontVariant.data.alarm.size;
         this.alarmDistanceX = this.generalFrontVariant.data.alarm.distance.x;
@@ -314,8 +317,8 @@ export class HomePage {
     });
 
     popover.onDidDismiss().then((data) => {
-      // console.log("HomePage onClickMatrixLanguage() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      console.log('HomePage onClickMatrixLanguage() - popover.onDidDismiss()', data);
+      if (data.role === 'select') {
         this.matrixLanguage = data.data;
         this.matrixText = this.languagesService.getLanguageValueById(this.matrixLanguage.id);
 

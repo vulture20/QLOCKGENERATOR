@@ -1,4 +1,4 @@
-import { IFont, FontsService } from './../fonts/fonts.service';
+import { FontsService } from './../fonts/fonts.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import * as opentype from 'opentype.js';
