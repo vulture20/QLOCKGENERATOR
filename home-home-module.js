@@ -188,9 +188,9 @@ var saveAs = saveAs || (function(view) {
 // while `this` is nsIContentFrameMessageManager
 // with an attribute `content` that corresponds to the window
 
-if (typeof module !== "undefined" && module.exports) {
+if ( true && module.exports) {
   module.exports.saveAs = saveAs;
-} else if (("function" !== "undefined" && __webpack_require__(/*! !webpack amd define */ "./node_modules/webpack/buildin/amd-define.js") !== null) && (__webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") !== null)) {
+} else if (( true && __webpack_require__(/*! !webpack amd define */ "./node_modules/webpack/buildin/amd-define.js") !== null) && (__webpack_require__(/*! !webpack amd options */ "./node_modules/webpack/buildin/amd-options.js") !== null)) {
   !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
     return saveAs;
   }).call(exports, __webpack_require__, exports, module),
@@ -214,6 +214,20 @@ module.exports = function() {
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/amd-options.js":
+/*!****************************************!*\
+  !*** (webpack)/buildin/amd-options.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(this, {}))
+
+/***/ }),
+
 /***/ "./src/app/components/alarm/symbols/symbols.component.html":
 /*!*****************************************************************!*\
   !*** ./src/app/components/alarm/symbols/symbols.component.html ***!
@@ -232,7 +246,7 @@ module.exports = "<ion-list>\n  <ion-item *ngFor=\"let symbol of this.alarmSymbo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQyLjEvd29yay8xL3Mvc3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUEwQjtFQUMxQixXQUFVLEVBQ2IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGFybS1zeW1ib2wtdmFsdWUge1xuICAgIGZvbnQtZmFtaWx5OiBBbGFybS1TeW1ib2xzO1xuICAgIHdpZHRoOiAxMCU7XG59Il19 */"
+module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUEwQjtFQUMxQixXQUFVLEVBQ2IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGFybS1zeW1ib2wtdmFsdWUge1xuICAgIGZvbnQtZmFtaWx5OiBBbGFybS1TeW1ib2xzO1xuICAgIHdpZHRoOiAxMCU7XG59Il19 */"
 
 /***/ }),
 
@@ -267,24 +281,24 @@ var SymbolsComponent = /** @class */ (function () {
         this.popoverCtrl = popoverCtrl;
         this.fontsService = fontsService;
         this.alarmSymbols = [];
-        // console.log("SymbolsComponent constructor()", this.navParams.data);
+        // console.log('SymbolsComponent constructor()', this.navParams.data);
         this.alarmSymbols = this.fontsService.getAlarms();
         if (this.navParams.data) {
-            this.alarmSymbolSelected = this.navParams.get("select");
+            this.alarmSymbolSelected = this.navParams.get('select');
         }
     }
     SymbolsComponent.prototype.close = function (data) {
-        // console.log("SymbolsComponent close()", data);
-        this.popoverCtrl.dismiss(data, "select");
+        // console.log('SymbolsComponent close()', data);
+        this.popoverCtrl.dismiss(data, 'select');
     };
     SymbolsComponent.prototype.ngOnInit = function () {
-        // console.log("SymbolsComponent ngOnInit()");
+        // console.log('SymbolsComponent ngOnInit()');
     };
     SymbolsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-symbols',
             template: __webpack_require__(/*! ./symbols.component.html */ "./src/app/components/alarm/symbols/symbols.component.html"),
-            styles: [__webpack_require__(/*! ./symbols.component.scss */ "./src/app/components/alarm/symbols/symbols.component.scss")],
+            styles: [__webpack_require__(/*! ./symbols.component.scss */ "./src/app/components/alarm/symbols/symbols.component.scss")]
         }),
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["PopoverController"],
@@ -504,22 +518,22 @@ var FontsComponent = /** @class */ (function () {
         this.popoverCtrl = popoverCtrl;
         this.fontService = fontService;
         this.fonts = [];
-        // console.log("VariantsComponent constructor()", this.navParams.data);
+        // console.log('VariantsComponent constructor()', this.navParams.data);
         this.fonts = this.fontService.getFontsGroupedByCategory();
         if (this.navParams.data) {
-            this.fontSelected = this.navParams.get("select");
-            this.teaserText = this.navParams.get("text");
-            if (this.teaserText == undefined) {
-                this.teaserText = "LOREM IPSUM DOLOR";
+            this.fontSelected = this.navParams.get('select');
+            this.teaserText = this.navParams.get('text');
+            if (this.teaserText === undefined) {
+                this.teaserText = 'LOREM IPSUM DOLOR';
             }
         }
     }
     FontsComponent.prototype.close = function (data) {
-        // console.log("VariantsComponent close()", data);
-        this.popoverCtrl.dismiss(data, "select");
+        // console.log('VariantsComponent close()', data);
+        this.popoverCtrl.dismiss(data, 'select');
     };
     FontsComponent.prototype.ngOnInit = function () {
-        // console.log("VariantsComponent ngOnInit()");
+        // console.log('VariantsComponent ngOnInit()');
     };
     FontsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -587,32 +601,50 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var LanguagesComponent = /** @class */ (function () {
     function LanguagesComponent(navParams, popoverCtrl, languagesService) {
-        // console.log("LanguagesComponent constructor()");
         this.navParams = navParams;
         this.popoverCtrl = popoverCtrl;
         this.languagesService = languagesService;
         this.languages = [];
+        // console.log('LanguagesComponent constructor()');
         this.languages = this.languagesService.getLanguages();
-        this.languages.forEach(function (element) {
-            element.value = element.value.replace(/\s/g, "").substr(0, 15);
-        });
+        this.sortLanguagesById();
+        this.cutLanguagesValue(0, 15);
         if (this.navParams.data) {
-            this.languageSelected = this.navParams.get("select");
+            this.languageSelected = this.navParams.get('select');
         }
     }
+    LanguagesComponent.prototype.sortLanguagesById = function () {
+        // console.log('LanguagesComponent sortLanguagesById()');
+        this.languages.sort(function (a, b) {
+            if (a.id < b.id) {
+                return -1;
+            }
+            else if (a.id > b.id) {
+                return 1;
+            }
+            return 0;
+        });
+    };
+    LanguagesComponent.prototype.cutLanguagesValue = function (from, length) {
+        if (from === void 0) { from = 0; }
+        if (length === void 0) { length = 15; }
+        // console.log('LanguagesComponent cutLanguagesValue()', from, length);
+        this.languages.forEach(function (element) {
+            element.value = element.value.replace(/\s+/g, '').substr(from, length);
+        });
+    };
     LanguagesComponent.prototype.close = function (data) {
-        // console.log("LanguagesComponent close()", data);
-        this.popoverCtrl.dismiss(data, "select");
+        // console.log('LanguagesComponent close()', data);
+        this.popoverCtrl.dismiss(data, 'select');
     };
     LanguagesComponent.prototype.ngOnInit = function () {
-        // console.log("LanguagesComponent ngOnInit()");
+        // console.log('LanguagesComponent ngOnInit()');
     };
     LanguagesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-languages',
             template: __webpack_require__(/*! ./languages.component.html */ "./src/app/components/matrix/languages/languages.component.html"),
-            styles: [__webpack_require__(/*! ./languages.component.scss */ "./src/app/components/matrix/languages/languages.component.scss")],
-            providers: [_services_languages_languages_service__WEBPACK_IMPORTED_MODULE_0__["LanguagesService"]]
+            styles: [__webpack_require__(/*! ./languages.component.scss */ "./src/app/components/matrix/languages/languages.component.scss")]
         }),
         __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["NavParams"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_1__["PopoverController"],
@@ -708,6 +740,31 @@ var PlacementsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/configs/defaults.ts":
+/*!*************************************!*\
+  !*** ./src/app/configs/defaults.ts ***!
+  \*************************************/
+/*! exports provided: DEFAULT_FONT, DEFAULT_ALARM_SYMBOL_NONE, DEFAULT_ALARM_SYMBOL, DEFAULT_VARIANT */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_FONT", function() { return DEFAULT_FONT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_ALARM_SYMBOL_NONE", function() { return DEFAULT_ALARM_SYMBOL_NONE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_ALARM_SYMBOL", function() { return DEFAULT_ALARM_SYMBOL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_VARIANT", function() { return DEFAULT_VARIANT; });
+/* harmony import */ var _fonts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fonts */ "./src/app/configs/fonts.ts");
+/* harmony import */ var _variants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./variants */ "./src/app/configs/variants.ts");
+
+
+var DEFAULT_FONT = _fonts__WEBPACK_IMPORTED_MODULE_0__["FONTS"][3];
+var DEFAULT_ALARM_SYMBOL_NONE = _fonts__WEBPACK_IMPORTED_MODULE_0__["ALARM_SYMBOLS"][0];
+var DEFAULT_ALARM_SYMBOL = _fonts__WEBPACK_IMPORTED_MODULE_0__["ALARM_SYMBOLS"][3];
+var DEFAULT_VARIANT = _variants__WEBPACK_IMPORTED_MODULE_1__["VARIANTS"][0];
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.module.ts":
 /*!*************************************!*\
   !*** ./src/app/home/home.module.ts ***!
@@ -749,7 +806,7 @@ var HomePageModule = /** @class */ (function () {
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild([
                     {
-                        path: '',
+                        path: '**',
                         component: _home_page__WEBPACK_IMPORTED_MODULE_5__["HomePage"]
                     }
                 ]),
@@ -783,7 +840,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-butt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQyLjEvd29yay8xL3Mvc3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10ZXh0YXJlYSB7XG4gICAgd2hpdGUtc3BhY2U6IHByZTtcbn0iXX0= */"
+module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10ZXh0YXJlYSB7XG4gICAgd2hpdGUtc3BhY2U6IHByZTtcbn0iXX0= */"
 
 /***/ }),
 
@@ -797,20 +854,22 @@ module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
-/* harmony import */ var _services_placements_placements_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../services/placements/placements.service */ "./src/app/services/placements/placements.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
-/* harmony import */ var _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../services/fonts/fonts.service */ "./src/app/services/fonts/fonts.service.ts");
-/* harmony import */ var _services_generator_generator_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/generator/generator.service */ "./src/app/services/generator/generator.service.ts");
-/* harmony import */ var _services_languages_languages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../services/languages/languages.service */ "./src/app/services/languages/languages.service.ts");
-/* harmony import */ var _services_variants_variants_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/variants/variants.service */ "./src/app/services/variants/variants.service.ts");
-/* harmony import */ var _components_alarm_symbols_symbols_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../components/alarm/symbols/symbols.component */ "./src/app/components/alarm/symbols/symbols.component.ts");
-/* harmony import */ var _components_general_variants_variants_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../components/general/variants/variants.component */ "./src/app/components/general/variants/variants.component.ts");
-/* harmony import */ var _components_matrix_languages_languages_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/matrix/languages/languages.component */ "./src/app/components/matrix/languages/languages.component.ts");
-/* harmony import */ var _components_matrix_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../components/matrix/fonts/fonts.component */ "./src/app/components/matrix/fonts/fonts.component.ts");
-/* harmony import */ var _components_minutes_placements_placements_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../components/minutes/placements/placements.component */ "./src/app/components/minutes/placements/placements.component.ts");
-/* harmony import */ var file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! file-saver/FileSaver */ "./node_modules/file-saver/FileSaver.js");
-/* harmony import */ var file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _configs_fonts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../configs/fonts */ "./src/app/configs/fonts.ts");
+/* harmony import */ var _services_placements_placements_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../services/placements/placements.service */ "./src/app/services/placements/placements.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/index.js");
+/* harmony import */ var _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../services/fonts/fonts.service */ "./src/app/services/fonts/fonts.service.ts");
+/* harmony import */ var _services_generator_generator_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../services/generator/generator.service */ "./src/app/services/generator/generator.service.ts");
+/* harmony import */ var _services_languages_languages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../services/languages/languages.service */ "./src/app/services/languages/languages.service.ts");
+/* harmony import */ var _services_variants_variants_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../services/variants/variants.service */ "./src/app/services/variants/variants.service.ts");
+/* harmony import */ var _components_alarm_symbols_symbols_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../components/alarm/symbols/symbols.component */ "./src/app/components/alarm/symbols/symbols.component.ts");
+/* harmony import */ var _components_general_variants_variants_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../components/general/variants/variants.component */ "./src/app/components/general/variants/variants.component.ts");
+/* harmony import */ var _components_matrix_languages_languages_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/matrix/languages/languages.component */ "./src/app/components/matrix/languages/languages.component.ts");
+/* harmony import */ var _components_matrix_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../components/matrix/fonts/fonts.component */ "./src/app/components/matrix/fonts/fonts.component.ts");
+/* harmony import */ var _components_minutes_placements_placements_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../components/minutes/placements/placements.component */ "./src/app/components/minutes/placements/placements.component.ts");
+/* harmony import */ var file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! file-saver/FileSaver */ "./node_modules/file-saver/FileSaver.js");
+/* harmony import */ var file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _configs_defaults__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../configs/defaults */ "./src/app/configs/defaults.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -868,6 +927,8 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
+
 var HomePage = /** @class */ (function () {
     function HomePage(generator, languagesService, fontService, variantsService, placementsService, popoverController) {
         this.generator = generator;
@@ -876,16 +937,22 @@ var HomePage = /** @class */ (function () {
         this.variantsService = variantsService;
         this.placementsService = placementsService;
         this.popoverController = popoverController;
+        // Default settings
+        this.generalFrontVariant = _configs_defaults__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_VARIANT"];
         this.generalFrontVariants = [];
         this.generalFrontHeight = 450;
         this.generalFrontWidth = 450;
         this.generalFrontMirror = false;
         this.generalFrontOutline = false;
-        this.minutesPlacement = { id: 0, value: "corner", label: "Ecken" };
+        this.minutesPlacement = {
+            id: 0,
+            value: 'corner',
+            label: 'Ecken'
+        };
         this.minutesRadius = 1;
         this.minutesDistanceX = 25;
         this.minutesDistanceY = 25;
-        this.alarmSymbol = { id: "0", label: "Ohne", category: _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontCategory"].REGULAR, filename: null, path: null, value: "", };
+        this.alarmSymbol = _configs_defaults__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_ALARM_SYMBOL_NONE"];
         this.alarmSymbols = [];
         this.alarmSize = 11;
         this.alarmDistanceX = 225;
@@ -894,23 +961,27 @@ var HomePage = /** @class */ (function () {
         this.matrixRows = 10;
         this.matrixDistanceX = 83.5;
         this.matrixDistanceY = 83.5;
-        this.matrixLanguage = { id: "DE", label: "DE Deutsch", value: "" };
+        this.matrixLanguage = {
+            id: 'DE',
+            label: 'DE Deutsch',
+            value: ''
+        };
         this.matrixLanguages = [];
-        this.matrixText = "ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR";
-        this.matrixFont = { id: "4000", label: "DIN", category: _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontCategory"].REGULAR, filename: "7737a754866a4378500fbf0a6808fe54.ttf", path: "./assets/fonts/", };
-        this.matrixFonts = [];
+        this.matrixText = 'ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR';
+        this.matrixFont = _configs_defaults__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_FONT"];
+        this.matrixFonts = _configs_fonts__WEBPACK_IMPORTED_MODULE_0__["FONTS"];
         this.matrixFontSize = 21;
-        this.logoText = "";
+        this.logoText = '';
         this.logoTextSize = 5.25;
         this.logoDistanceX = 225;
         this.logoDistanceY = 425;
-        this.colorFront = "#000000";
-        this.colorLight = "#FFFFFF";
+        this.colorFront = '#000000';
+        this.colorLight = '#FFFFFF';
         // console.log("HomePage constructor()");
         this.alarmSymbols = this.fontService.getAlarms();
         this.matrixLanguages = this.languagesService.getLanguages();
         this.matrixFonts = this.fontService.getFonts();
-        this.generalFrontVariant = this.variantsService.getVariantById("000");
+        this.generalFrontVariant = this.variantsService.getVariantById('000');
         this.generalFrontVariants = this.variantsService.getVariantsGroupedBySupplier();
     }
     HomePage.prototype.ngAfterViewInit = function () {
@@ -923,7 +994,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.onClickGithubLogo = function () {
         // console.log("HomePage onClickGithubLogo()");
-        window.open("https://github.com/SimonGolms/QLOCKGENERATOR");
+        window.open('https://github.com/SimonGolms/QLOCKGENERATOR');
     };
     HomePage.prototype.onChangeFrontVariant = function () {
         // console.log("HomePage onChangeFrontVariant()");
@@ -936,7 +1007,7 @@ var HomePage = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
-                            component: _components_general_variants_variants_component__WEBPACK_IMPORTED_MODULE_8__["VariantsComponent"],
+                            component: _components_general_variants_variants_component__WEBPACK_IMPORTED_MODULE_9__["VariantsComponent"],
                             componentProps: { select: this.generalFrontVariant },
                             event: event,
                             translucent: true
@@ -945,7 +1016,7 @@ var HomePage = /** @class */ (function () {
                         popover = _a.sent();
                         popover.onDidDismiss().then(function (data) {
                             // console.log("HomePage onClickFrontVariant() - popover.onDidDismiss()", data);
-                            if (data.role == "select") {
+                            if (data.role === 'select') {
                                 _this.generalFrontVariant = data.data;
                                 _this.generalFrontHeight = _this.generalFrontVariant.data.front.height;
                                 _this.generalFrontWidth = _this.generalFrontVariant.data.front.width;
@@ -953,11 +1024,11 @@ var HomePage = /** @class */ (function () {
                                 _this.minutesRadius = _this.generalFrontVariant.data.minutes.radius;
                                 _this.minutesDistanceX = _this.generalFrontVariant.data.minutes.distance.x;
                                 _this.minutesDistanceY = _this.generalFrontVariant.data.minutes.distance.y;
-                                if (_this.generalFrontVariant.data.alarm.show == true) {
-                                    _this.alarmSymbol = _this.fontService.getAlarmById(_this.fontService.DEFAULT_ALARM_SYMBOL_ID);
+                                if (_this.generalFrontVariant.data.alarm.show === true) {
+                                    _this.alarmSymbol = _configs_defaults__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_ALARM_SYMBOL"];
                                 }
                                 else {
-                                    _this.alarmSymbol = _this.fontService.getAlarmById(_this.fontService.DEFAULT_ALARM_SYMBOL_NONE_ID);
+                                    _this.alarmSymbol = _configs_defaults__WEBPACK_IMPORTED_MODULE_14__["DEFAULT_ALARM_SYMBOL_NONE"];
                                 }
                                 _this.alarmSize = _this.generalFrontVariant.data.alarm.size;
                                 _this.alarmDistanceX = _this.generalFrontVariant.data.alarm.distance.x;
@@ -983,7 +1054,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeFrontHeight()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.generalFrontHeight != event.detail.value)) {
+        if (event !== null && this.generalFrontHeight !== event.detail.value) {
             this.generalFrontHeight = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -992,7 +1063,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeFrontWidth()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.generalFrontWidth != event.detail.value)) {
+        if (event !== null && this.generalFrontWidth !== event.detail.value) {
             this.generalFrontWidth = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1020,7 +1091,7 @@ var HomePage = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
-                            component: _components_minutes_placements_placements_component__WEBPACK_IMPORTED_MODULE_11__["PlacementsComponent"],
+                            component: _components_minutes_placements_placements_component__WEBPACK_IMPORTED_MODULE_12__["PlacementsComponent"],
                             componentProps: { select: this.minutesPlacement },
                             event: event,
                             translucent: true
@@ -1029,7 +1100,7 @@ var HomePage = /** @class */ (function () {
                         popover = _a.sent();
                         popover.onDidDismiss().then(function (data) {
                             //  console.log("HomePage onClickMinutesPlacement() - popover.onDidDismiss()", data);
-                            if (data.role == "select") {
+                            if (data.role === 'select') {
                                 _this.minutesPlacement = data.data;
                                 _this.generateFrontPreview();
                             }
@@ -1044,7 +1115,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMinutesRadius()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.minutesRadius != event.detail.value)) {
+        if (event !== null && this.minutesRadius !== event.detail.value) {
             this.minutesRadius = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1053,7 +1124,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMinutesDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.minutesDistanceX != event.detail.value)) {
+        if (event !== null && this.minutesDistanceX !== event.detail.value) {
             this.minutesDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1062,7 +1133,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMinutesDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.minutesDistanceY != event.detail.value)) {
+        if (event !== null && this.minutesDistanceY !== event.detail.value) {
             this.minutesDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1079,7 +1150,7 @@ var HomePage = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
-                            component: _components_alarm_symbols_symbols_component__WEBPACK_IMPORTED_MODULE_7__["SymbolsComponent"],
+                            component: _components_alarm_symbols_symbols_component__WEBPACK_IMPORTED_MODULE_8__["SymbolsComponent"],
                             componentProps: { select: this.alarmSymbol },
                             event: event,
                             translucent: true
@@ -1088,7 +1159,7 @@ var HomePage = /** @class */ (function () {
                         popover = _a.sent();
                         popover.onDidDismiss().then(function (data) {
                             // console.log("HomePage onClickAlarmSymbol() - popover.onDidDismiss()", data);
-                            if (data.role == "select") {
+                            if (data.role === 'select') {
                                 _this.alarmSymbol = data.data;
                                 _this.generateFrontPreview();
                             }
@@ -1103,7 +1174,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeAlarmSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.alarmSize != event.detail.value)) {
+        if (event !== null && this.alarmSize !== event.detail.value) {
             this.alarmSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1112,7 +1183,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeAlarmDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.alarmDistanceX != event.detail.value)) {
+        if (event !== null && this.alarmDistanceX !== event.detail.value) {
             this.alarmDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1121,7 +1192,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeAlarmDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.alarmDistanceY != event.detail.value)) {
+        if (event !== null && this.alarmDistanceY !== event.detail.value) {
             this.alarmDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1130,7 +1201,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMatrixColumns()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.matrixColumns != event.detail.value)) {
+        if (event !== null && this.matrixColumns !== event.detail.value) {
             this.matrixColumns = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1139,7 +1210,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMatrixRows()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.matrixRows != event.detail.value)) {
+        if (event !== null && this.matrixRows !== event.detail.value) {
             this.matrixRows = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1148,7 +1219,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMatrixDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.matrixDistanceX != event.detail.value)) {
+        if (event !== null && this.matrixDistanceX !== event.detail.value) {
             this.matrixDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1157,7 +1228,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMatrixDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.matrixDistanceY != event.detail.value)) {
+        if (event !== null && this.matrixDistanceY !== event.detail.value) {
             this.matrixDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1174,17 +1245,17 @@ var HomePage = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
-                            component: _components_matrix_languages_languages_component__WEBPACK_IMPORTED_MODULE_9__["LanguagesComponent"],
+                            component: _components_matrix_languages_languages_component__WEBPACK_IMPORTED_MODULE_10__["LanguagesComponent"],
                             componentProps: {
-                                select: this.matrixLanguage,
+                                select: this.matrixLanguage
                             },
-                            event: event,
+                            event: event
                         })];
                     case 1:
                         popover = _a.sent();
                         popover.onDidDismiss().then(function (data) {
-                            // console.log("HomePage onClickMatrixLanguage() - popover.onDidDismiss()", data);
-                            if (data.role == "select") {
+                            console.log('HomePage onClickMatrixLanguage() - popover.onDidDismiss()', data);
+                            if (data.role === 'select') {
                                 _this.matrixLanguage = data.data;
                                 _this.matrixText = _this.languagesService.getLanguageValueById(_this.matrixLanguage.id);
                                 _this.generateFrontPreview();
@@ -1214,18 +1285,19 @@ var HomePage = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.popoverController.create({
-                            component: _components_matrix_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_10__["FontsComponent"],
+                            component: _components_matrix_fonts_fonts_component__WEBPACK_IMPORTED_MODULE_11__["FontsComponent"],
                             componentProps: {
                                 select: this.matrixFont,
-                                text: this.matrixText.replace(/\s/g, "").substr(0, 15) // RegEx '\s' matches a single white white space character, including space, tab, form feed, line feed.
+                                // RegEx '\s' matches a single white white space character, including space, tab, form feed, line feed.
+                                text: this.matrixText.replace(/\s/g, '').substr(0, 15)
                             },
-                            event: event,
+                            event: event
                         })];
                     case 1:
                         popover = _a.sent();
                         popover.onDidDismiss().then(function (data) {
                             // console.log("HomePage onClickMatrixFont() - popover.onDidDismiss()", data);
-                            if (data.role == "select") {
+                            if (data.role === 'select') {
                                 _this.matrixFont = data.data;
                                 _this.generateFrontPreview();
                             }
@@ -1240,7 +1312,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeMatrixFontSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.matrixFontSize != event.detail.value)) {
+        if (event !== null && this.matrixFontSize !== event.detail.value) {
             this.matrixFontSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1249,7 +1321,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeLogoText()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.logoText != event.detail.value)) {
+        if (event !== null && this.logoText !== event.detail.value) {
             this.logoText = event.detail.value;
             this.generateFrontPreview();
         }
@@ -1258,7 +1330,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeLogoTextSize()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.logoTextSize != event.detail.value)) {
+        if (event !== null && this.logoTextSize !== event.detail.value) {
             this.logoTextSize = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1267,7 +1339,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeLogoDistanceX()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.logoDistanceX != event.detail.value)) {
+        if (event !== null && this.logoDistanceX !== event.detail.value) {
             this.logoDistanceX = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1276,7 +1348,7 @@ var HomePage = /** @class */ (function () {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeLogoDistanceY()", event);
         // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-        if ((event != null) && (this.logoDistanceY != event.detail.value)) {
+        if (event !== null && this.logoDistanceY !== event.detail.value) {
             this.logoDistanceY = Number(event.detail.value);
             this.generateFrontPreview();
         }
@@ -1284,25 +1356,25 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.onChangeColorFront = function (event) {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeColorFront()", event);
-        // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
-        var element = document.getElementById("background");
-        if (element != undefined) {
-            element.setAttribute("fill", this.colorFront);
+        // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
+        var element = document.getElementById('background');
+        if (element !== undefined) {
+            element.setAttribute('fill', this.colorFront);
             element.style.fill = this.colorFront;
         }
     };
     HomePage.prototype.onChangeColorLight = function (event) {
         if (event === void 0) { event = null; }
         // console.log("HomePage onChangeColorLight()", event);
-        // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
-        var element = document.getElementById("minutes");
-        if (element != undefined) {
-            element.setAttribute("fill", this.colorLight);
+        // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
+        var element = document.getElementById('minutes');
+        if (element !== undefined) {
+            element.setAttribute('fill', this.colorLight);
             element.style.fill = this.colorLight;
         }
-        element = document.getElementById("text");
-        if (element != undefined) {
-            element.setAttribute("fill", this.colorLight);
+        element = document.getElementById('text');
+        if (element !== undefined) {
+            element.setAttribute('fill', this.colorLight);
             element.style.fill = this.colorLight;
         }
     };
@@ -1311,49 +1383,57 @@ var HomePage = /** @class */ (function () {
     };
     HomePage.prototype.exportAsSVG = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
-        this.generator.generateSVG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (svg) {
+        this.generator
+            .generateSVG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight)
+            .then(function (svg) {
             var svgBlob = new Blob([svg], {
-                type: "image/svg+xml"
+                type: 'image/svg+xml'
             });
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(svgBlob, filename + ".svg");
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__["saveAs"])(svgBlob, filename + '.svg');
         });
     };
     HomePage.prototype.exportAsDXF = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
-        this.generator.generateDXF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (dxf) {
-            var blob = new Blob([dxf], { type: "dxf/dxf;charset=utf-8" });
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(blob, filename + ".dxf");
+        this.generator
+            .generateDXF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight)
+            .then(function (dxf) {
+            var blob = new Blob([dxf], { type: 'dxf/dxf;charset=utf-8' });
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__["saveAs"])(blob, filename + '.dxf');
         });
     };
     HomePage.prototype.exportAsPDF = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
-        this.generator.generatePDF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (pdf) {
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(pdf, filename + ".pdf");
+        this.generator
+            .generatePDF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight)
+            .then(function (pdf) {
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__["saveAs"])(pdf, filename + '.pdf');
         });
     };
     HomePage.prototype.exportAsPNG = function () {
         var filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model, this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
-        this.generator.generatePNG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight).then(function (png) {
-            var blob = new Blob([png], { type: "image/png" });
-            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_12__["saveAs"])(blob, filename + ".png");
+        this.generator
+            .generatePNG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline, this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY, this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY, this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY, this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize, this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY, this.colorFront, this.colorLight)
+            .then(function (png) {
+            var blob = new Blob([png], { type: 'image/png' });
+            Object(file_saver_FileSaver__WEBPACK_IMPORTED_MODULE_13__["saveAs"])(blob, filename + '.png');
         });
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('drawing'),
-        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"])('drawing'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"])
     ], HomePage.prototype, "drawing", void 0);
     HomePage = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.page.html */ "./src/app/home/home.page.html"),
-            styles: [__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")],
+            styles: [__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")]
         }),
-        __metadata("design:paramtypes", [_services_generator_generator_service__WEBPACK_IMPORTED_MODULE_4__["GeneratorService"],
-            _services_languages_languages_service__WEBPACK_IMPORTED_MODULE_5__["LanguagesService"],
-            _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_3__["FontsService"],
-            _services_variants_variants_service__WEBPACK_IMPORTED_MODULE_6__["VariantsService"],
-            _services_placements_placements_service__WEBPACK_IMPORTED_MODULE_0__["PlacementsService"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["PopoverController"]])
+        __metadata("design:paramtypes", [_services_generator_generator_service__WEBPACK_IMPORTED_MODULE_5__["GeneratorService"],
+            _services_languages_languages_service__WEBPACK_IMPORTED_MODULE_6__["LanguagesService"],
+            _services_fonts_fonts_service__WEBPACK_IMPORTED_MODULE_4__["FontsService"],
+            _services_variants_variants_service__WEBPACK_IMPORTED_MODULE_7__["VariantsService"],
+            _services_placements_placements_service__WEBPACK_IMPORTED_MODULE_1__["PlacementsService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"]])
     ], HomePage);
     return HomePage;
 }());
