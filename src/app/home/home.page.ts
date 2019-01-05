@@ -1,11 +1,22 @@
-import { IPlacement, PlacementsService } from './../services/placements/placements.service';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { FONTS } from './../configs/fonts';
+import {
+  ILanguage,
+  IVariant,
+  IVariantGroupedBySupplier,
+  IFont,
+  IFontAlarm
+} from './../core/core.module';
+import {
+  IPlacement,
+  PlacementsService
+} from './../services/placements/placements.service';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
-import { FontsService, IFont, FontCategory, IFontAlarm } from './../services/fonts/fonts.service';
+import { FontsService } from './../services/fonts/fonts.service';
 import { GeneratorService } from './../services/generator/generator.service';
-import { LanguagesService, ILanguage } from '../services/languages/languages.service';
-import { VariantsService, IVariant, IVariantGroupedBySupplier } from '../services/variants/variants.service';
+import { LanguagesService } from './../services/languages/languages.service';
+import { VariantsService } from './../services/variants/variants.service';
 
 import { SymbolsComponent } from './../components/alarm/symbols/symbols.component';
 import { VariantsComponent } from './../components/general/variants/variants.component';
@@ -14,68 +25,82 @@ import { FontsComponent } from './../components/matrix/fonts/fonts.component';
 import { PlacementsComponent } from './../components/minutes/placements/placements.component';
 
 import { saveAs } from 'file-saver/FileSaver';
+import {
+  DEFAULT_ALARM_SYMBOL_NONE,
+  DEFAULT_ALARM_SYMBOL,
+  DEFAULT_FONT,
+  DEFAULT_VARIANT
+} from '../configs/defaults';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  styleUrls: ['home.page.scss']
 })
-
-export class HomePage {
+export class HomePage implements AfterViewInit {
   @ViewChild('drawing') drawing: ElementRef;
 
   // Default settings
-  protected generalFrontVariant: IVariant;
+  protected generalFrontVariant: IVariant = DEFAULT_VARIANT;
   protected generalFrontVariants: IVariantGroupedBySupplier[] = [];
-  protected generalFrontHeight: number = 450;
-  protected generalFrontWidth: number = 450;
-  protected generalFrontMirror: boolean = false;
-  protected generalFrontOutline: boolean = false;
-  protected minutesPlacement: IPlacement = { id: 0, value: "corner", label: "Ecken" };
-  protected minutesRadius: number = 1;
-  protected minutesDistanceX: number = 25;
-  protected minutesDistanceY: number = 25;
-  protected alarmSymbol: IFontAlarm = { id: "0", label: "Ohne", category: FontCategory.REGULAR, filename: null, path: null, value: "", }
+  protected generalFrontHeight = 450;
+  protected generalFrontWidth = 450;
+  protected generalFrontMirror = false;
+  protected generalFrontOutline = false;
+  protected minutesPlacement: IPlacement = {
+    id: 0,
+    value: 'corner',
+    label: 'Ecken'
+  };
+  protected minutesRadius = 1;
+  protected minutesDistanceX = 25;
+  protected minutesDistanceY = 25;
+  protected alarmSymbol: IFontAlarm = DEFAULT_ALARM_SYMBOL_NONE;
   protected alarmSymbols: IFontAlarm[] = [];
-  protected alarmSize: number = 11;
-  protected alarmDistanceX: number = 225;
-  protected alarmDistanceY: number = 25;
-  protected matrixColumns: number = 11;
-  protected matrixRows: number = 10;
-  protected matrixDistanceX: number = 83.5;
-  protected matrixDistanceY: number = 83.5;
-  protected matrixLanguage: ILanguage = { id: "DE", label: "DE Deutsch", value: "" };
+  protected alarmSize = 11;
+  protected alarmDistanceX = 225;
+  protected alarmDistanceY = 25;
+  protected matrixColumns = 11;
+  protected matrixRows = 10;
+  protected matrixDistanceX = 83.5;
+  protected matrixDistanceY = 83.5;
+  protected matrixLanguage: ILanguage = {
+    id: 'DE',
+    label: 'DE Deutsch',
+    value: ''
+  };
   protected matrixLanguages: ILanguage[] = [];
-  protected matrixText: string = "ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR";
-  protected matrixFont: IFont = { id: "4000", label: "DIN", category: FontCategory.REGULAR, filename: "7737a754866a4378500fbf0a6808fe54.ttf", path: "./assets/fonts/", };
-  protected matrixFonts: IFont[] = [];
-  protected matrixFontSize: number = 21;
-  protected logoText: string = "";
-  protected logoTextSize: number = 5.25;
-  protected logoDistanceX: number = 225;
-  protected logoDistanceY: number = 425;
-  protected colorFront: string = "#000000";
-  protected colorLight: string = "#FFFFFF";
+  protected matrixText =
+    'ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR';
+  protected matrixFont: IFont = DEFAULT_FONT;
+  protected matrixFonts: IFont[] = FONTS;
+  protected matrixFontSize = 21;
+  protected logoText = '';
+  protected logoTextSize = 5.25;
+  protected logoDistanceX = 225;
+  protected logoDistanceY = 425;
+  protected colorFront = '#000000';
+  protected colorLight = '#FFFFFF';
 
   constructor(
     public generator: GeneratorService,
-    public languagesService: LanguagesService,
+    private languagesService: LanguagesService,
     public fontService: FontsService,
     public variantsService: VariantsService,
     public placementsService: PlacementsService,
-    public popoverController: PopoverController,
+    public popoverController: PopoverController
   ) {
     // console.log("HomePage constructor()");
     this.alarmSymbols = this.fontService.getAlarms();
     this.matrixLanguages = this.languagesService.getLanguages();
     this.matrixFonts = this.fontService.getFonts();
-    this.generalFrontVariant = this.variantsService.getVariantById("000");
+    this.generalFrontVariant = this.variantsService.getVariantById('000');
     this.generalFrontVariants = this.variantsService.getVariantsGroupedBySupplier();
   }
 
   ngAfterViewInit() {
     // console.log("HomePage ngOnInit()");
-    this.generator.preview.subscribe((preview) => {
+    this.generator.preview.subscribe(preview => {
       this.drawing.nativeElement.innerHTML = preview;
     });
     this.generateFrontPreview();
@@ -83,7 +108,7 @@ export class HomePage {
 
   protected onClickGithubLogo() {
     // console.log("HomePage onClickGithubLogo()");
-    window.open("https://github.com/SimonGolms/QLOCKGENERATOR");
+    window.open('https://github.com/SimonGolms/QLOCKGENERATOR');
   }
 
   protected onChangeFrontVariant() {
@@ -99,21 +124,23 @@ export class HomePage {
       translucent: true
     });
 
-    popover.onDidDismiss().then((data) => {
+    popover.onDidDismiss().then(data => {
       // console.log("HomePage onClickFrontVariant() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      if (data.role === 'select') {
         this.generalFrontVariant = data.data;
 
         this.generalFrontHeight = this.generalFrontVariant.data.front.height;
         this.generalFrontWidth = this.generalFrontVariant.data.front.width;
-        this.minutesPlacement = this.placementsService.getPlacementByValue(this.generalFrontVariant.data.minutes.placement);
+        this.minutesPlacement = this.placementsService.getPlacementByValue(
+          this.generalFrontVariant.data.minutes.placement
+        );
         this.minutesRadius = this.generalFrontVariant.data.minutes.radius;
         this.minutesDistanceX = this.generalFrontVariant.data.minutes.distance.x;
         this.minutesDistanceY = this.generalFrontVariant.data.minutes.distance.y;
-        if (this.generalFrontVariant.data.alarm.show == true) {
-          this.alarmSymbol = this.fontService.getAlarmById(this.fontService.DEFAULT_ALARM_SYMBOL_ID);
+        if (this.generalFrontVariant.data.alarm.show === true) {
+          this.alarmSymbol = DEFAULT_ALARM_SYMBOL;
         } else {
-          this.alarmSymbol = this.fontService.getAlarmById(this.fontService.DEFAULT_ALARM_SYMBOL_NONE_ID);
+          this.alarmSymbol = DEFAULT_ALARM_SYMBOL_NONE;
         }
         this.alarmSize = this.generalFrontVariant.data.alarm.size;
         this.alarmDistanceX = this.generalFrontVariant.data.alarm.distance.x;
@@ -135,7 +162,7 @@ export class HomePage {
   protected onChangeFrontHeight(event: any = null) {
     // console.log("HomePage onChangeFrontHeight()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.generalFrontHeight != event.detail.value)) {
+    if (event !== null && this.generalFrontHeight !== event.detail.value) {
       this.generalFrontHeight = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -144,7 +171,7 @@ export class HomePage {
   protected onChangeFrontWidth(event: any = null) {
     // console.log("HomePage onChangeFrontWidth()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.generalFrontWidth != event.detail.value)) {
+    if (event !== null && this.generalFrontWidth !== event.detail.value) {
       this.generalFrontWidth = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -174,9 +201,9 @@ export class HomePage {
       translucent: true
     });
 
-    popover.onDidDismiss().then((data) => {
+    popover.onDidDismiss().then(data => {
       //  console.log("HomePage onClickMinutesPlacement() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      if (data.role === 'select') {
         this.minutesPlacement = data.data;
         this.generateFrontPreview();
       }
@@ -188,7 +215,7 @@ export class HomePage {
   protected onChangeMinutesRadius(event: any = null) {
     // console.log("HomePage onChangeMinutesRadius()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.minutesRadius != event.detail.value)) {
+    if (event !== null && this.minutesRadius !== event.detail.value) {
       this.minutesRadius = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -197,7 +224,7 @@ export class HomePage {
   protected onChangeMinutesDistanceX(event: any = null) {
     // console.log("HomePage onChangeMinutesDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.minutesDistanceX != event.detail.value)) {
+    if (event !== null && this.minutesDistanceX !== event.detail.value) {
       this.minutesDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -206,7 +233,7 @@ export class HomePage {
   protected onChangeMinutesDistanceY(event: any = null) {
     // console.log("HomePage onChangeMinutesDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.minutesDistanceY != event.detail.value)) {
+    if (event !== null && this.minutesDistanceY !== event.detail.value) {
       this.minutesDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -225,9 +252,9 @@ export class HomePage {
       translucent: true
     });
 
-    popover.onDidDismiss().then((data) => {
+    popover.onDidDismiss().then(data => {
       // console.log("HomePage onClickAlarmSymbol() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      if (data.role === 'select') {
         this.alarmSymbol = data.data;
         this.generateFrontPreview();
       }
@@ -239,7 +266,7 @@ export class HomePage {
   protected onChangeAlarmSize(event: any = null) {
     // console.log("HomePage onChangeAlarmSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.alarmSize != event.detail.value)) {
+    if (event !== null && this.alarmSize !== event.detail.value) {
       this.alarmSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -248,7 +275,7 @@ export class HomePage {
   protected onChangeAlarmDistanceX(event: any = null) {
     // console.log("HomePage onChangeAlarmDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.alarmDistanceX != event.detail.value)) {
+    if (event !== null && this.alarmDistanceX !== event.detail.value) {
       this.alarmDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -257,7 +284,7 @@ export class HomePage {
   protected onChangeAlarmDistanceY(event: any = null) {
     // console.log("HomePage onChangeAlarmDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.alarmDistanceY != event.detail.value)) {
+    if (event !== null && this.alarmDistanceY !== event.detail.value) {
       this.alarmDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -266,7 +293,7 @@ export class HomePage {
   protected onChangeMatrixColumns(event: any = null) {
     // console.log("HomePage onChangeMatrixColumns()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.matrixColumns != event.detail.value)) {
+    if (event !== null && this.matrixColumns !== event.detail.value) {
       this.matrixColumns = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -275,7 +302,7 @@ export class HomePage {
   protected onChangeMatrixRows(event: any = null) {
     // console.log("HomePage onChangeMatrixRows()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.matrixRows != event.detail.value)) {
+    if (event !== null && this.matrixRows !== event.detail.value) {
       this.matrixRows = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -284,7 +311,7 @@ export class HomePage {
   protected onChangeMatrixDistanceX(event: any = null) {
     // console.log("HomePage onChangeMatrixDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.matrixDistanceX != event.detail.value)) {
+    if (event !== null && this.matrixDistanceX !== event.detail.value) {
       this.matrixDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -293,7 +320,7 @@ export class HomePage {
   protected onChangeMatrixDistanceY(event: any = null) {
     // console.log("HomePage onChangeMatrixDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.matrixDistanceY != event.detail.value)) {
+    if (event !== null && this.matrixDistanceY !== event.detail.value) {
       this.matrixDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -308,16 +335,21 @@ export class HomePage {
     const popover = await this.popoverController.create({
       component: LanguagesComponent,
       componentProps: {
-        select: this.matrixLanguage,
+        select: this.matrixLanguage
       },
-      event: event,
+      event: event
     });
 
-    popover.onDidDismiss().then((data) => {
-      // console.log("HomePage onClickMatrixLanguage() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+    popover.onDidDismiss().then(data => {
+      console.log(
+        'HomePage onClickMatrixLanguage() - popover.onDidDismiss()',
+        data
+      );
+      if (data.role === 'select') {
         this.matrixLanguage = data.data;
-        this.matrixText = this.languagesService.getLanguageValueById(this.matrixLanguage.id);
+        this.matrixText = this.languagesService.getLanguageValueById(
+          this.matrixLanguage.id
+        );
 
         this.generateFrontPreview();
       }
@@ -342,14 +374,15 @@ export class HomePage {
       component: FontsComponent,
       componentProps: {
         select: this.matrixFont,
-        text: this.matrixText.replace(/\s/g, "").substr(0, 15)  // RegEx '\s' matches a single white white space character, including space, tab, form feed, line feed.
+        // RegEx '\s' matches a single white white space character, including space, tab, form feed, line feed.
+        text: this.matrixText.replace(/\s/g, '').substr(0, 15)
       },
-      event: event,
+      event: event
     });
 
-    popover.onDidDismiss().then((data) => {
+    popover.onDidDismiss().then(data => {
       // console.log("HomePage onClickMatrixFont() - popover.onDidDismiss()", data);
-      if (data.role == "select") {
+      if (data.role === 'select') {
         this.matrixFont = data.data;
         this.generateFrontPreview();
       }
@@ -361,7 +394,7 @@ export class HomePage {
   protected onChangeMatrixFontSize(event: any = null) {
     // console.log("HomePage onChangeMatrixFontSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.matrixFontSize != event.detail.value)) {
+    if (event !== null && this.matrixFontSize !== event.detail.value) {
       this.matrixFontSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -369,7 +402,7 @@ export class HomePage {
   protected onChangeLogoText(event: any = null) {
     // console.log("HomePage onChangeLogoText()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.logoText != event.detail.value)) {
+    if (event !== null && this.logoText !== event.detail.value) {
       this.logoText = event.detail.value;
       this.generateFrontPreview();
     }
@@ -377,7 +410,7 @@ export class HomePage {
   protected onChangeLogoTextSize(event: any = null) {
     // console.log("HomePage onChangeLogoTextSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.logoTextSize != event.detail.value)) {
+    if (event !== null && this.logoTextSize !== event.detail.value) {
       this.logoTextSize = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -385,7 +418,7 @@ export class HomePage {
   protected onChangeLogoDistanceX(event: any = null) {
     // console.log("HomePage onChangeLogoDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.logoDistanceX != event.detail.value)) {
+    if (event !== null && this.logoDistanceX !== event.detail.value) {
       this.logoDistanceX = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -394,7 +427,7 @@ export class HomePage {
   protected onChangeLogoDistanceY(event: any = null) {
     // console.log("HomePage onChangeLogoDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
-    if ((event != null) && (this.logoDistanceY != event.detail.value)) {
+    if (event !== null && this.logoDistanceY !== event.detail.value) {
       this.logoDistanceY = Number(event.detail.value);
       this.generateFrontPreview();
     }
@@ -402,101 +435,254 @@ export class HomePage {
 
   protected onChangeColorFront(event: any = null) {
     // console.log("HomePage onChangeColorFront()", event);
-    // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
-    let element = document.getElementById("background");
-    if (element != undefined) {
-      element.setAttribute("fill", this.colorFront);
+    // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
+    const element = document.getElementById('background');
+    if (element !== undefined) {
+      element.setAttribute('fill', this.colorFront);
       element.style.fill = this.colorFront;
     }
   }
 
   protected onChangeColorLight(event: any = null) {
     // console.log("HomePage onChangeColorLight()", event);
-    // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview 
-    let element = document.getElementById("minutes");
-    if (element != undefined) {
-      element.setAttribute("fill", this.colorLight);
+    // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
+    let element = document.getElementById('minutes');
+    if (element !== undefined) {
+      element.setAttribute('fill', this.colorLight);
       element.style.fill = this.colorLight;
     }
-    element = document.getElementById("text");
-    if (element != undefined) {
-      element.setAttribute("fill", this.colorLight);
+    element = document.getElementById('text');
+    if (element !== undefined) {
+      element.setAttribute('fill', this.colorLight);
       element.style.fill = this.colorLight;
     }
   }
 
   generateFrontPreview() {
-    this.generator.generatePreview(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
-      this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
-      this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
-      this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
-      this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
-      this.colorFront, this.colorLight)
+    this.generator.generatePreview(
+      this.generalFrontHeight,
+      this.generalFrontWidth,
+      this.generalFrontMirror,
+      this.generalFrontOutline,
+      this.minutesPlacement.value,
+      this.minutesRadius,
+      this.minutesDistanceX,
+      this.minutesDistanceY,
+      this.alarmSymbol.value,
+      this.alarmSize,
+      this.alarmDistanceX,
+      this.alarmDistanceY,
+      this.matrixColumns,
+      this.matrixRows,
+      this.matrixDistanceX,
+      this.matrixDistanceY,
+      this.matrixLanguage.id,
+      this.matrixText,
+      this.matrixFont.path + this.matrixFont.filename,
+      this.matrixFontSize,
+      this.logoText,
+      this.logoTextSize,
+      this.logoDistanceX,
+      this.logoDistanceY,
+      this.colorFront,
+      this.colorLight
+    );
   }
 
   exportAsSVG() {
-    let filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model,
-      this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
+    const filename = this.generator.getFileName(
+      this.generalFrontHeight,
+      this.generalFrontWidth,
+      this.generalFrontVariant.data.info.model,
+      this.matrixLanguage.id,
+      false,
+      this.matrixFont.label,
+      this.alarmSymbol.value,
+      this.logoText,
+      this.generalFrontOutline,
+      this.generalFrontMirror
+    );
 
-    this.generator.generateSVG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
-      this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
-      this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
-      this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
-      this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
-      this.colorFront, this.colorLight).then((svg: string) => {
-        let svgBlob = new Blob([svg], {
-          type: "image/svg+xml"
+    this.generator
+      .generateSVG(
+        this.generalFrontHeight,
+        this.generalFrontWidth,
+        this.generalFrontMirror,
+        this.generalFrontOutline,
+        this.minutesPlacement.value,
+        this.minutesRadius,
+        this.minutesDistanceX,
+        this.minutesDistanceY,
+        this.alarmSymbol.value,
+        this.alarmSize,
+        this.alarmDistanceX,
+        this.alarmDistanceY,
+        this.matrixColumns,
+        this.matrixRows,
+        this.matrixDistanceX,
+        this.matrixDistanceY,
+        this.matrixLanguage.id,
+        this.matrixText,
+        this.matrixFont.path + this.matrixFont.filename,
+        this.matrixFontSize,
+        this.logoText,
+        this.logoTextSize,
+        this.logoDistanceX,
+        this.logoDistanceY,
+        this.colorFront,
+        this.colorLight
+      )
+      .then((svg: string) => {
+        const svgBlob = new Blob([svg], {
+          type: 'image/svg+xml'
         });
-        saveAs(svgBlob, filename + ".svg");
+        saveAs(svgBlob, filename + '.svg');
       });
   }
 
   exportAsDXF() {
-    let filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model,
-      this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
+    const filename = this.generator.getFileName(
+      this.generalFrontHeight,
+      this.generalFrontWidth,
+      this.generalFrontVariant.data.info.model,
+      this.matrixLanguage.id,
+      false,
+      this.matrixFont.label,
+      this.alarmSymbol.value,
+      this.logoText,
+      this.generalFrontOutline,
+      this.generalFrontMirror
+    );
 
-    this.generator.generateDXF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
-      this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
-      this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
-      this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
-      this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
-      this.colorFront, this.colorLight).then((dxf: string) => {
-        let blob = new Blob([dxf], { type: "dxf/dxf;charset=utf-8" });
-        saveAs(blob, filename + ".dxf");
+    this.generator
+      .generateDXF(
+        this.generalFrontHeight,
+        this.generalFrontWidth,
+        this.generalFrontMirror,
+        this.generalFrontOutline,
+        this.minutesPlacement.value,
+        this.minutesRadius,
+        this.minutesDistanceX,
+        this.minutesDistanceY,
+        this.alarmSymbol.value,
+        this.alarmSize,
+        this.alarmDistanceX,
+        this.alarmDistanceY,
+        this.matrixColumns,
+        this.matrixRows,
+        this.matrixDistanceX,
+        this.matrixDistanceY,
+        this.matrixLanguage.id,
+        this.matrixText,
+        this.matrixFont.path + this.matrixFont.filename,
+        this.matrixFontSize,
+        this.logoText,
+        this.logoTextSize,
+        this.logoDistanceX,
+        this.logoDistanceY,
+        this.colorFront,
+        this.colorLight
+      )
+      .then((dxf: string) => {
+        const blob = new Blob([dxf], { type: 'dxf/dxf;charset=utf-8' });
+        saveAs(blob, filename + '.dxf');
       });
   }
 
   exportAsPDF() {
-    let filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model,
-      this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
+    const filename = this.generator.getFileName(
+      this.generalFrontHeight,
+      this.generalFrontWidth,
+      this.generalFrontVariant.data.info.model,
+      this.matrixLanguage.id,
+      false,
+      this.matrixFont.label,
+      this.alarmSymbol.value,
+      this.logoText,
+      this.generalFrontOutline,
+      this.generalFrontMirror
+    );
 
-    this.generator.generatePDF(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
-      this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
-      this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
-      this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
-      this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
-      this.colorFront, this.colorLight).then((pdf) => {
-        saveAs(pdf, filename + ".pdf");
+    this.generator
+      .generatePDF(
+        this.generalFrontHeight,
+        this.generalFrontWidth,
+        this.generalFrontMirror,
+        this.generalFrontOutline,
+        this.minutesPlacement.value,
+        this.minutesRadius,
+        this.minutesDistanceX,
+        this.minutesDistanceY,
+        this.alarmSymbol.value,
+        this.alarmSize,
+        this.alarmDistanceX,
+        this.alarmDistanceY,
+        this.matrixColumns,
+        this.matrixRows,
+        this.matrixDistanceX,
+        this.matrixDistanceY,
+        this.matrixLanguage.id,
+        this.matrixText,
+        this.matrixFont.path + this.matrixFont.filename,
+        this.matrixFontSize,
+        this.logoText,
+        this.logoTextSize,
+        this.logoDistanceX,
+        this.logoDistanceY,
+        this.colorFront,
+        this.colorLight
+      )
+      .then(pdf => {
+        saveAs(pdf, filename + '.pdf');
       });
   }
 
   exportAsPNG() {
-    let filename = this.generator.getFileName(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontVariant.data.info.model,
-      this.matrixLanguage.id, false, this.matrixFont.label, this.alarmSymbol.value, this.logoText, this.generalFrontOutline, this.generalFrontMirror);
+    const filename = this.generator.getFileName(
+      this.generalFrontHeight,
+      this.generalFrontWidth,
+      this.generalFrontVariant.data.info.model,
+      this.matrixLanguage.id,
+      false,
+      this.matrixFont.label,
+      this.alarmSymbol.value,
+      this.logoText,
+      this.generalFrontOutline,
+      this.generalFrontMirror
+    );
 
-    this.generator.generatePNG(this.generalFrontHeight, this.generalFrontWidth, this.generalFrontMirror, this.generalFrontOutline,
-      this.minutesPlacement.value, this.minutesRadius, this.minutesDistanceX, this.minutesDistanceY,
-      this.alarmSymbol.value, this.alarmSize, this.alarmDistanceX, this.alarmDistanceY,
-      this.matrixColumns, this.matrixRows, this.matrixDistanceX, this.matrixDistanceY,
-      this.matrixLanguage.id, this.matrixText, this.matrixFont.path + this.matrixFont.filename, this.matrixFontSize,
-      this.logoText, this.logoTextSize, this.logoDistanceX, this.logoDistanceY,
-      this.colorFront, this.colorLight).then((png: Uint8Array) => {
-        let blob = new Blob([png], { type: "image/png" });
-        saveAs(blob, filename + ".png");
+    this.generator
+      .generatePNG(
+        this.generalFrontHeight,
+        this.generalFrontWidth,
+        this.generalFrontMirror,
+        this.generalFrontOutline,
+        this.minutesPlacement.value,
+        this.minutesRadius,
+        this.minutesDistanceX,
+        this.minutesDistanceY,
+        this.alarmSymbol.value,
+        this.alarmSize,
+        this.alarmDistanceX,
+        this.alarmDistanceY,
+        this.matrixColumns,
+        this.matrixRows,
+        this.matrixDistanceX,
+        this.matrixDistanceY,
+        this.matrixLanguage.id,
+        this.matrixText,
+        this.matrixFont.path + this.matrixFont.filename,
+        this.matrixFontSize,
+        this.logoText,
+        this.logoTextSize,
+        this.logoDistanceX,
+        this.logoDistanceY,
+        this.colorFront,
+        this.colorLight
+      )
+      .then((png: Uint8Array) => {
+        const blob = new Blob([png], { type: 'image/png' });
+        saveAs(blob, filename + '.png');
       });
   }
 }

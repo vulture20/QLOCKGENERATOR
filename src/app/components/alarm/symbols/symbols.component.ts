@@ -1,4 +1,5 @@
-import { FontsService, IFontAlarm } from '../../../services/fonts/fonts.service';
+import { IFontAlarm } from './../../../core/core.module';
+import { FontsService } from '../../../services/fonts/fonts.service';
 import { Component, OnInit } from '@angular/core';
 import { PopoverController, NavParams } from '@ionic/angular';
 
@@ -18,20 +19,20 @@ export class SymbolsComponent implements OnInit {
     private popoverCtrl: PopoverController,
     private fontsService: FontsService,
   ) {
-  // console.log("SymbolsComponent constructor()", this.navParams.data);
+    // console.log('SymbolsComponent constructor()', this.navParams.data);
     this.alarmSymbols = this.fontsService.getAlarms();
     if (this.navParams.data) {
-      this.alarmSymbolSelected = this.navParams.get("select");
+      this.alarmSymbolSelected = this.navParams.get('select');
     }
   }
 
   protected close(data: IFontAlarm, ) {
-  // console.log("SymbolsComponent close()", data);
-    this.popoverCtrl.dismiss(data, "select");
+    // console.log('SymbolsComponent close()', data);
+    this.popoverCtrl.dismiss(data, 'select');
   }
 
   ngOnInit() {
-  // console.log("SymbolsComponent ngOnInit()");
+    // console.log('SymbolsComponent ngOnInit()');
   }
 
 }

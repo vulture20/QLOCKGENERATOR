@@ -1,4 +1,5 @@
-import { VariantsService, IVariant, IVariantGroupedBySupplier } from './../../../services/variants/variants.service';
+import { IVariant, IVariantGroupedBySupplier } from './../../../core/core.module';
+import { VariantsService } from './../../../services/variants/variants.service';
 import { NavParams, PopoverController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
@@ -17,7 +18,7 @@ export class VariantsComponent implements OnInit {
     private popoverCtrl: PopoverController,
     private variantsService: VariantsService,
   ) {
-  // console.log("VariantsComponent constructor()", this.navParams.data);
+    // console.log("VariantsComponent constructor()", this.navParams.data);
     this.variants = this.variantsService.getVariantsGroupedBySupplier();
     if (this.navParams.data) {
       this.variantSelected = this.navParams.get("select");
@@ -25,12 +26,12 @@ export class VariantsComponent implements OnInit {
   }
 
   protected close(data: IVariant, ) {
-  // console.log("VariantsComponent close()", data);
+    // console.log("VariantsComponent close()", data);
     this.popoverCtrl.dismiss(data, "select");
   }
 
   ngOnInit() {
-  // console.log("VariantsComponent ngOnInit()");
+    // console.log("VariantsComponent ngOnInit()");
   }
 
 }
