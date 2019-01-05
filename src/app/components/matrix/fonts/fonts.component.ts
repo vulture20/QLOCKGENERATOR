@@ -9,7 +9,6 @@ import { FontsService } from './../../../services/fonts/fonts.service';
   styleUrls: ['./fonts.component.scss']
 })
 export class FontsComponent implements OnInit {
-
   protected fonts: IFontGroupedByCategory[] = [];
   protected fontSelected: IFont;
   protected teaserText: string;
@@ -17,7 +16,7 @@ export class FontsComponent implements OnInit {
   constructor(
     private navParams: NavParams,
     private popoverCtrl: PopoverController,
-    private fontService: FontsService,
+    private fontService: FontsService
   ) {
     // console.log('VariantsComponent constructor()', this.navParams.data);
     this.fonts = this.fontService.getFontsGroupedByCategory();
@@ -39,5 +38,4 @@ export class FontsComponent implements OnInit {
   ngOnInit() {
     // console.log('VariantsComponent ngOnInit()');
   }
-
 }

@@ -1,12 +1,16 @@
 import { ALARM_SYMBOLS, FONTS } from './../../configs/fonts';
-import { IFont, IFontAlarm, IFontGroupedByCategory, FontCategory } from './../../core/core.module';
+import {
+  IFont,
+  IFontAlarm,
+  IFontGroupedByCategory,
+  FontCategory
+} from './../../core/core.module';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FontsService {
-
   public readonly DIRECTORY: string = './assets/fonts/';
   public readonly FILENAME_ALARM_FONT: string = 'Alarm-Symbols.ttf';
 
@@ -14,8 +18,7 @@ export class FontsService {
 
   private readonly _alarmSymbols: IFontAlarm[] = ALARM_SYMBOLS;
 
-  constructor(
-  ) {
+  constructor() {
     // console.log('FontsService constructor()');
   }
 
@@ -45,13 +48,16 @@ export class FontsService {
 
     for (let i = 0; i < this._fonts.length; i++) {
       // Check if Category already exists in value
-      const categoryExists = value.findIndex((element) => {
+      const categoryExists = value.findIndex(element => {
         return element.category === FontCategory[this._fonts[i].category];
       });
 
       if (categoryExists === -1) {
         // Category not exists, add first variant entry
-        const element: IFontGroupedByCategory = { category: FontCategory[this._fonts[i].category], fonts: [this._fonts[i]] };
+        const element: IFontGroupedByCategory = {
+          category: FontCategory[this._fonts[i].category],
+          fonts: [this._fonts[i]]
+        };
         value.push(element);
       } else {
         // Supplier exists, add variant entry
