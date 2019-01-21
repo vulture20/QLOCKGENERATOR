@@ -14,7 +14,7 @@ import { ComponentsModule } from '../components/components.module';
     IonicModule,
     RouterModule.forChild([
       {
-        path: '**',
+        path: '',
         component: HomePage
       }
     ]),
