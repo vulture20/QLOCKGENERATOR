@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[124],{
 
-/***/ "./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.sc.entry.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.sc.entry.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.entry.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.entry.js ***!
+  \***********************************************************************/
 /*! exports provided: IonVirtualScroll */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

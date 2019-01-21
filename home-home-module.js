@@ -246,7 +246,7 @@ module.exports = "<ion-list>\n  <ion-item *ngFor=\"let symbol of this.alarmSymbo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDJCQUEwQjtFQUMxQixXQUFVLEVBQ2IiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGFybS1zeW1ib2wtdmFsdWUge1xuICAgIGZvbnQtZmFtaWx5OiBBbGFybS1TeW1ib2xzO1xuICAgIHdpZHRoOiAxMCU7XG59Il19 */"
+module.exports = ".alarm-symbol-value {\n  font-family: Alarm-Symbols;\n  width: 10%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBCQUEwQjtFQUMxQixVQUFVLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FsYXJtL3N5bWJvbHMvc3ltYm9scy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGFybS1zeW1ib2wtdmFsdWUge1xuICAgIGZvbnQtZmFtaWx5OiBBbGFybS1TeW1ib2xzO1xuICAgIHdpZHRoOiAxMCU7XG59Il19 */"
 
 /***/ }),
 
@@ -806,7 +806,7 @@ var HomePageModule = /** @class */ (function () {
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["IonicModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild([
                     {
-                        path: '**',
+                        path: '',
                         component: _home_page__WEBPACK_IMPORTED_MODULE_5__["HomePage"]
                     }
                 ]),
@@ -840,7 +840,7 @@ module.exports = "<ion-header>\n  <ion-toolbar color=\"primary\">\n    <ion-butt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksaUJBQWdCLEVBQ25CIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10ZXh0YXJlYSB7XG4gICAgd2hpdGUtc3BhY2U6IHByZTtcbn0iXX0= */"
+module.exports = "ion-textarea {\n  white-space: pre; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy92c3RzL2FnZW50LzIuMTQ0LjAvd29yay8xL3Mvc3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRleHRhcmVhIHtcbiAgICB3aGl0ZS1zcGFjZTogcHJlO1xufSJdfQ== */"
 
 /***/ }),
 
