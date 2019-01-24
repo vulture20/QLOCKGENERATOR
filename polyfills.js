@@ -649,7 +649,7 @@ module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.2' };
+var core = module.exports = { version: '2.6.3' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -5402,7 +5402,7 @@ function patchCallbacks(target, targetName, method, callbacks) {
                         descriptor.value = wrapWithCurrentZone(descriptor.value, source);
                         _redefineProperty(opts.prototype, callback, descriptor);
                     }
-                    else {
+                    else if (prototype[callback]) {
                         prototype[callback] = wrapWithCurrentZone(prototype[callback], source);
                     }
                 }
