@@ -11,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguagesComponent implements OnInit {
 
-  protected languages: ILanguage[] = [];
-  protected languageSelected: ILanguage;
+  languages: ILanguage[] = [];
+  languageSelected: ILanguage;
 
   constructor(
     private navParams: NavParams,
@@ -29,7 +29,7 @@ export class LanguagesComponent implements OnInit {
     }
   }
 
-  protected sortLanguagesById(): void {
+  sortLanguagesById(): void {
     // console.log('LanguagesComponent sortLanguagesById()');
     this.languages.sort((a, b) => {
       if (a.id < b.id) {
@@ -41,14 +41,14 @@ export class LanguagesComponent implements OnInit {
     });
   }
 
-  protected cutLanguagesValue(from: number = 0, length: number = 15): void {
+  cutLanguagesValue(from: number = 0, length: number = 15): void {
     // console.log('LanguagesComponent cutLanguagesValue()', from, length);
     this.languages.forEach((element) => {
       element.value = element.value.replace(/\s+/g, '').substr(from, length);
     });
   }
 
-  protected close(data: ILanguage) {
+  close(data: ILanguage) {
     // console.log('LanguagesComponent close()', data);
     this.popoverCtrl.dismiss(data, 'select');
   }

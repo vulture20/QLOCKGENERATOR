@@ -6,19 +6,13 @@ import { PopoverController, NavParams } from '@ionic/angular';
 @Component({
   selector: 'app-symbols',
   templateUrl: './symbols.component.html',
-  styleUrls: ['./symbols.component.scss'],
+  styleUrls: ['./symbols.component.scss']
 })
-
 export class SymbolsComponent implements OnInit {
+  alarmSymbols: IFontAlarm[] = [];
+  alarmSymbolSelected: IFontAlarm;
 
-  protected alarmSymbols: IFontAlarm[] = [];
-  protected alarmSymbolSelected: IFontAlarm;
-
-  constructor(
-    private navParams: NavParams,
-    private popoverCtrl: PopoverController,
-    private fontsService: FontsService,
-  ) {
+  constructor(private navParams: NavParams, private popoverCtrl: PopoverController, private fontsService: FontsService) {
     // console.log('SymbolsComponent constructor()', this.navParams.data);
     this.alarmSymbols = this.fontsService.getAlarms();
     if (this.navParams.data) {
@@ -26,7 +20,7 @@ export class SymbolsComponent implements OnInit {
     }
   }
 
-  protected close(data: IFontAlarm, ) {
+  close(data: IFontAlarm) {
     // console.log('SymbolsComponent close()', data);
     this.popoverCtrl.dismiss(data, 'select');
   }
@@ -34,5 +28,4 @@ export class SymbolsComponent implements OnInit {
   ngOnInit() {
     // console.log('SymbolsComponent ngOnInit()');
   }
-
 }

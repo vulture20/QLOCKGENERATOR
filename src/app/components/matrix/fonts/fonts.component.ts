@@ -9,9 +9,9 @@ import { FontsService } from './../../../services/fonts/fonts.service';
   styleUrls: ['./fonts.component.scss']
 })
 export class FontsComponent implements OnInit {
-  protected fonts: IFontGroupedByCategory[] = [];
-  protected fontSelected: IFont;
-  protected teaserText: string;
+  fonts: IFontGroupedByCategory[] = [];
+  fontSelected: IFont;
+  teaserText: string;
 
   constructor(
     private navParams: NavParams,
@@ -30,7 +30,7 @@ export class FontsComponent implements OnInit {
     }
   }
 
-  protected close(data: IFont) {
+  close(data: IFont) {
     // console.log('VariantsComponent close()', data);
     this.popoverCtrl.dismiss(data, 'select');
   }
