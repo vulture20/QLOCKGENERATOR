@@ -28,26 +28,6 @@ var map = {
 		"common",
 		61
 	],
-	"./1bo3p9bf.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/1bo3p9bf.entry.js",
-		"common",
-		10
-	],
-	"./1bo3p9bf.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/1bo3p9bf.sc.entry.js",
-		"common",
-		11
-	],
-	"./1z2sd9l6.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/1z2sd9l6.entry.js",
-		"common",
-		12
-	],
-	"./1z2sd9l6.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/1z2sd9l6.sc.entry.js",
-		"common",
-		13
-	],
 	"./3hf0d5sl.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/3hf0d5sl.entry.js",
 		"common",
@@ -70,15 +50,25 @@ var map = {
 		"common",
 		133
 	],
+	"./4bqlcwkr.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.entry.js",
+		"common",
+		10
+	],
+	"./4bqlcwkr.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4bqlcwkr.sc.entry.js",
+		"common",
+		11
+	],
 	"./4jebvdzz.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.entry.js",
 		"common",
-		14
+		12
 	],
 	"./4jebvdzz.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4jebvdzz.sc.entry.js",
 		"common",
-		15
+		13
 	],
 	"./4m739wpj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/4m739wpj.entry.js",
@@ -102,25 +92,35 @@ var map = {
 		"common",
 		135
 	],
+	"./4tejeecb.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4tejeecb.entry.js",
+		"common",
+		66
+	],
+	"./4tejeecb.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/4tejeecb.sc.entry.js",
+		"common",
+		67
+	],
 	"./5ccusvgf.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ccusvgf.entry.js",
 		"common",
-		66
+		68
 	],
 	"./5ccusvgf.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/5ccusvgf.sc.entry.js",
 		"common",
-		67
-	],
-	"./6f4biktp.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.entry.js",
-		"common",
-		68
-	],
-	"./6f4biktp.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/6f4biktp.sc.entry.js",
-		"common",
 		69
+	],
+	"./5ey3bs99.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.entry.js",
+		"common",
+		14
+	],
+	"./5ey3bs99.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/5ey3bs99.sc.entry.js",
+		"common",
+		15
 	],
 	"./8ldpeqpe.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/8ldpeqpe.entry.js",
@@ -142,59 +142,57 @@ var map = {
 		"common",
 		19
 	],
+	"./96olk0dp.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/96olk0dp.entry.js",
+		136
+	],
+	"./96olk0dp.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/96olk0dp.sc.entry.js",
+		137
+	],
 	"./9rhd7ueu.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/9rhd7ueu.entry.js",
 		0,
 		"common",
-		136
+		138
 	],
 	"./9rhd7ueu.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/9rhd7ueu.sc.entry.js",
 		0,
 		"common",
-		137
-	],
-	"./9ynbzp83.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.entry.js",
-		"common",
-		20
-	],
-	"./9ynbzp83.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/9ynbzp83.sc.entry.js",
-		"common",
-		21
-	],
-	"./a4llz05d.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/a4llz05d.entry.js",
-		"common",
-		70
-	],
-	"./a4llz05d.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/a4llz05d.sc.entry.js",
-		"common",
-		71
+		139
 	],
 	"./afjpklm4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.entry.js",
 		"common",
-		72
+		70
 	],
 	"./afjpklm4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/afjpklm4.sc.entry.js",
 		"common",
-		73
+		71
 	],
-	"./b2tc2xce.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/b2tc2xce.entry.js",
+	"./bhtvuxzz.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bhtvuxzz.entry.js",
 		0,
 		"common",
-		138
+		140
 	],
-	"./b2tc2xce.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/b2tc2xce.sc.entry.js",
+	"./bhtvuxzz.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bhtvuxzz.sc.entry.js",
 		0,
 		"common",
-		139
+		141
+	],
+	"./bneiwm8s.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.entry.js",
+		"common",
+		20
+	],
+	"./bneiwm8s.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/bneiwm8s.sc.entry.js",
+		"common",
+		21
 	],
 	"./c2kiol1t.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/c2kiol1t.entry.js",
@@ -206,57 +204,67 @@ var map = {
 		"common",
 		23
 	],
-	"./ch8upsxn.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.entry.js",
-		0,
+	"./c3xilup3.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.entry.js",
 		"common",
-		114
+		24
 	],
-	"./ch8upsxn.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ch8upsxn.sc.entry.js",
-		0,
+	"./c3xilup3.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/c3xilup3.sc.entry.js",
 		"common",
-		115
+		25
 	],
 	"./coytbtgb.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.entry.js",
 		"common",
-		78
+		76
 	],
 	"./coytbtgb.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/coytbtgb.sc.entry.js",
 		"common",
-		79
+		77
 	],
 	"./cuwemyof.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.entry.js",
 		"common",
-		80
+		78
 	],
 	"./cuwemyof.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cuwemyof.sc.entry.js",
 		"common",
-		81
+		79
 	],
 	"./cyhnsxpk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cyhnsxpk.entry.js",
 		0,
 		"common",
-		142
+		144
 	],
 	"./cyhnsxpk.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/cyhnsxpk.sc.entry.js",
 		0,
 		"common",
-		143
-	],
-	"./e9ulkkay.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/e9ulkkay.entry.js",
-		144
-	],
-	"./e9ulkkay.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/e9ulkkay.sc.entry.js",
 		145
+	],
+	"./dznymaqz.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.entry.js",
+		"common",
+		80
+	],
+	"./dznymaqz.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/dznymaqz.sc.entry.js",
+		"common",
+		81
+	],
+	"./ejzmat7r.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.entry.js",
+		"common",
+		72
+	],
+	"./ejzmat7r.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ejzmat7r.sc.entry.js",
+		"common",
+		73
 	],
 	"./fcbdrndu.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fcbdrndu.entry.js",
@@ -268,6 +276,18 @@ var map = {
 		"common",
 		83
 	],
+	"./fdynremk.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.entry.js",
+		0,
+		"common",
+		114
+	],
+	"./fdynremk.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/fdynremk.sc.entry.js",
+		0,
+		"common",
+		115
+	],
 	"./ffukzwt6.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.entry.js",
 		"common",
@@ -277,16 +297,6 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/ffukzwt6.sc.entry.js",
 		"common",
 		123
-	],
-	"./fhznfhbd.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.entry.js",
-		"common",
-		24
-	],
-	"./fhznfhbd.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/fhznfhbd.sc.entry.js",
-		"common",
-		25
 	],
 	"./fiqi6app.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/fiqi6app.entry.js",
@@ -308,13 +318,13 @@ var map = {
 		"common",
 		149
 	],
-	"./gvyg1bwh.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.entry.js",
+	"./hqdeczjh.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.entry.js",
 		"common",
 		26
 	],
-	"./gvyg1bwh.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/gvyg1bwh.sc.entry.js",
+	"./hqdeczjh.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/hqdeczjh.sc.entry.js",
 		"common",
 		27
 	],
@@ -327,18 +337,6 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/i9lnulrx.sc.entry.js",
 		"common",
 		29
-	],
-	"./iz1p89vi.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/iz1p89vi.entry.js",
-		2,
-		"common",
-		150
-	],
-	"./iz1p89vi.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/iz1p89vi.sc.entry.js",
-		2,
-		"common",
-		151
 	],
 	"./jdcptvrs.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/jdcptvrs.entry.js",
@@ -390,23 +388,13 @@ var map = {
 		"common",
 		33
 	],
-	"./kw6qlege.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/kw6qlege.entry.js",
-		"common",
-		74
-	],
-	"./kw6qlege.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/kw6qlege.sc.entry.js",
-		"common",
-		75
-	],
-	"./l22q7ddp.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/l22q7ddp.entry.js",
+	"./k1gbeuol.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/k1gbeuol.entry.js",
 		"common",
 		126
 	],
-	"./l22q7ddp.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/l22q7ddp.sc.entry.js",
+	"./k1gbeuol.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/k1gbeuol.sc.entry.js",
 		"common",
 		127
 	],
@@ -420,37 +408,49 @@ var map = {
 		"common",
 		89
 	],
+	"./lucyelmx.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.entry.js",
+		"common",
+		34
+	],
+	"./lucyelmx.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/lucyelmx.sc.entry.js",
+		"common",
+		35
+	],
 	"./ly8zbpmk.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.entry.js",
 		"common",
-		34
+		36
 	],
 	"./ly8zbpmk.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ly8zbpmk.sc.entry.js",
 		"common",
-		35
+		37
+	],
+	"./m0ainuth.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.entry.js",
+		0,
+		"common",
+		116
+	],
+	"./m0ainuth.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/m0ainuth.sc.entry.js",
+		0,
+		"common",
+		117
 	],
 	"./mny78lhg.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/mny78lhg.entry.js",
 		0,
 		"common",
-		152
+		150
 	],
 	"./mny78lhg.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/mny78lhg.sc.entry.js",
 		0,
 		"common",
-		153
-	],
-	"./n361sgpa.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.entry.js",
-		"common",
-		36
-	],
-	"./n361sgpa.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/n361sgpa.sc.entry.js",
-		"common",
-		37
+		151
 	],
 	"./nr6wcehx.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nr6wcehx.entry.js",
@@ -462,37 +462,17 @@ var map = {
 		"common",
 		39
 	],
-	"./ntxo2f3d.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.entry.js",
-		"common",
-		40
-	],
-	"./ntxo2f3d.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ntxo2f3d.sc.entry.js",
-		"common",
-		41
-	],
 	"./nxacca4l.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nxacca4l.entry.js",
 		0,
 		"common",
-		154
+		152
 	],
 	"./nxacca4l.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/nxacca4l.sc.entry.js",
 		0,
 		"common",
-		155
-	],
-	"./nxghvzhm.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.entry.js",
-		"common",
-		42
-	],
-	"./nxghvzhm.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/nxghvzhm.sc.entry.js",
-		"common",
-		43
+		153
 	],
 	"./oboc8zd4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/oboc8zd4.entry.js",
@@ -507,46 +487,56 @@ var map = {
 	"./odqmlmdd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.entry.js",
 		"common",
-		44
+		40
 	],
 	"./odqmlmdd.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/odqmlmdd.sc.entry.js",
 		"common",
-		45
+		41
 	],
 	"./psxwmesv.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/psxwmesv.entry.js",
 		0,
 		"common",
-		156
+		154
 	],
 	"./psxwmesv.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/psxwmesv.sc.entry.js",
 		0,
 		"common",
-		157
+		155
 	],
 	"./qtcvseqn.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qtcvseqn.entry.js",
 		0,
 		"common",
-		158
+		156
 	],
 	"./qtcvseqn.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qtcvseqn.sc.entry.js",
 		0,
 		"common",
-		159
+		157
 	],
 	"./qvwswew4.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.entry.js",
 		"common",
-		116
+		118
 	],
 	"./qvwswew4.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/qvwswew4.sc.entry.js",
 		"common",
-		117
+		119
+	],
+	"./qztmfygd.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.entry.js",
+		"common",
+		42
+	],
+	"./qztmfygd.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/qztmfygd.sc.entry.js",
+		"common",
+		43
 	],
 	"./raunowwy.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/raunowwy.entry.js",
@@ -558,15 +548,27 @@ var map = {
 		"common",
 		93
 	],
-	"./s347396r.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/s347396r.entry.js",
+	"./s0ahgtia.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s0ahgtia.entry.js",
+		2,
 		"common",
-		46
+		158
 	],
-	"./s347396r.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/s347396r.sc.entry.js",
+	"./s0ahgtia.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s0ahgtia.sc.entry.js",
+		2,
 		"common",
-		47
+		159
+	],
+	"./s3pnsa7u.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.entry.js",
+		"common",
+		44
+	],
+	"./s3pnsa7u.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/s3pnsa7u.sc.entry.js",
+		"common",
+		45
 	],
 	"./sdfyvdro.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sdfyvdro.entry.js",
@@ -581,12 +583,12 @@ var map = {
 	"./sghmhl28.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.entry.js",
 		"common",
-		48
+		46
 	],
 	"./sghmhl28.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sghmhl28.sc.entry.js",
 		"common",
-		49
+		47
 	],
 	"./sjcqnbtt.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/sjcqnbtt.entry.js",
@@ -601,12 +603,12 @@ var map = {
 	"./t547wlk7.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.entry.js",
 		"common",
-		118
+		120
 	],
 	"./t547wlk7.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/t547wlk7.sc.entry.js",
 		"common",
-		119
+		121
 	],
 	"./ta1bgxgm.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/ta1bgxgm.entry.js",
@@ -618,81 +620,89 @@ var map = {
 		"common",
 		99
 	],
-	"./tui62q7d.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.entry.js",
+	"./tqgphjq7.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.entry.js",
 		"common",
-		100
+		48
 	],
-	"./tui62q7d.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/tui62q7d.sc.entry.js",
+	"./tqgphjq7.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/tqgphjq7.sc.entry.js",
 		"common",
-		101
+		49
 	],
 	"./tylmm2yl.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.entry.js",
 		"common",
-		102
+		100
 	],
 	"./tylmm2yl.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/tylmm2yl.sc.entry.js",
 		"common",
-		103
+		101
 	],
 	"./uegz8gm3.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.entry.js",
 		"common",
-		104
+		102
 	],
 	"./uegz8gm3.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/uegz8gm3.sc.entry.js",
 		"common",
+		103
+	],
+	"./uetn90ud.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.entry.js",
+		"common",
+		104
+	],
+	"./uetn90ud.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/uetn90ud.sc.entry.js",
+		"common",
 		105
 	],
-	"./uyartgdr.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/uyartgdr.entry.js",
-		0,
+	"./ugjythpm.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ugjythpm.entry.js",
+		2,
 		"common",
 		160
 	],
-	"./uyartgdr.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/uyartgdr.sc.entry.js",
-		0,
+	"./ugjythpm.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/ugjythpm.sc.entry.js",
+		2,
 		"common",
 		161
 	],
-	"./vbuvdxh8.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/vbuvdxh8.entry.js",
-		2,
+	"./unqw84tu.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/unqw84tu.entry.js",
 		"common",
-		162
+		128
 	],
-	"./vbuvdxh8.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/vbuvdxh8.sc.entry.js",
-		2,
+	"./unqw84tu.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/unqw84tu.sc.entry.js",
 		"common",
-		163
+		129
 	],
 	"./vjeei8vr.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.entry.js",
 		"common",
-		76
+		74
 	],
 	"./vjeei8vr.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/vjeei8vr.sc.entry.js",
 		"common",
-		77
+		75
 	],
-	"./wy4rjeqs.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.entry.js",
+	"./wem5ffil.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/wem5ffil.entry.js",
 		0,
 		"common",
-		120
+		162
 	],
-	"./wy4rjeqs.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/wy4rjeqs.sc.entry.js",
+	"./wem5ffil.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/wem5ffil.sc.entry.js",
 		0,
 		"common",
-		121
+		163
 	],
 	"./xbafxwto.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xbafxwto.entry.js",
@@ -706,15 +716,25 @@ var map = {
 		"common",
 		165
 	],
+	"./xdz5gsa7.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.entry.js",
+		"common",
+		50
+	],
+	"./xdz5gsa7.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/xdz5gsa7.sc.entry.js",
+		"common",
+		51
+	],
 	"./xfbndl84.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.entry.js",
 		"common",
-		50
+		52
 	],
 	"./xfbndl84.sc.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xfbndl84.sc.entry.js",
 		"common",
-		51
+		53
 	],
 	"./xgnma4yj.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/xgnma4yj.entry.js",
@@ -746,36 +766,6 @@ var map = {
 		"common",
 		111
 	],
-	"./ygh0szo0.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.entry.js",
-		"common",
-		52
-	],
-	"./ygh0szo0.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/ygh0szo0.sc.entry.js",
-		"common",
-		53
-	],
-	"./yl6smbo0.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/yl6smbo0.entry.js",
-		"common",
-		128
-	],
-	"./yl6smbo0.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/yl6smbo0.sc.entry.js",
-		"common",
-		129
-	],
-	"./z9eemkqi.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.entry.js",
-		"common",
-		54
-	],
-	"./z9eemkqi.sc.entry.js": [
-		"./node_modules/@ionic/core/dist/esm/es5/build/z9eemkqi.sc.entry.js",
-		"common",
-		55
-	],
 	"./z9nt6ntd.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.entry.js",
 		"common",
@@ -785,6 +775,16 @@ var map = {
 		"./node_modules/@ionic/core/dist/esm/es5/build/z9nt6ntd.sc.entry.js",
 		"common",
 		131
+	],
+	"./zewwnxh6.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.entry.js",
+		"common",
+		54
+	],
+	"./zewwnxh6.sc.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/es5/build/zewwnxh6.sc.entry.js",
+		"common",
+		55
 	],
 	"./zktscnoo.entry.js": [
 		"./node_modules/@ionic/core/dist/esm/es5/build/zktscnoo.entry.js",
@@ -1633,7 +1633,7 @@ var VARIANTS = [
         data: {
             info: {
                 supplier: 'QLOCKGENERATOR',
-                model: 'Benutzerdefiniert',
+                model: 'Benutzerdefiniert'
             },
             front: {
                 width: 450.0,
@@ -1681,7 +1681,7 @@ var VARIANTS = [
         data: {
             info: {
                 supplier: 'leuchtbildshop.net',
-                model: 'Wortwecker 23x23 Rahmenlos',
+                model: 'Wortwecker 23x23 Rahmenlos'
             },
             front: {
                 width: 230.0,
@@ -2383,7 +2383,7 @@ var VARIANTS = [
                     y: 92.502
                 },
                 font: {
-                    size: 21.0
+                    size: 22.65
                 }
             },
             logo: {
@@ -47147,7 +47147,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/vsts/agent/2.144.0/work/1/s/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/vsts/agent/2.147.1/work/1/s/src/main.ts */"./src/main.ts");
 
 
 /***/ }),
