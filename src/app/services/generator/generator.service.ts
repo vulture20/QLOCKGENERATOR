@@ -14,16 +14,14 @@ import PDFDocument from './lib/pdfkit.js';
 export class GeneratorService {
   private readonly EXPORT_AUTHOR: string = 'QLOCKGENERATOR';
   private readonly EXPORT_SUBJECT: string = 'Front Template';
-  private readonly EXPORT_KEYWORDS: string =
-    'QLOCKGENERATOR; Word Clock; Template; Front; Wortuhr; Vorlage';
+  private readonly EXPORT_KEYWORDS: string = 'QLOCKGENERATOR; Word Clock; Template; Front; Wortuhr; Vorlage';
 
   public preview: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   private alarmFont = '';
 
   constructor(private fontsService: FontsService) {
     // console.log('GeneratorService constructor()');
-    this.alarmFont =
-      this.fontsService.DIRECTORY + this.fontsService.FILENAME_ALARM_FONT;
+    this.alarmFont = this.fontsService.DIRECTORY + this.fontsService.FILENAME_ALARM_FONT;
   }
 
   public async generatePreview(
@@ -82,10 +80,7 @@ export class GeneratorService {
       colorLight
     ).then(front => {
       // console.log('GeneratorService generatePreview() - generateFrontModel() - SUCCESS', front);
-      const svg = makerjs.exporter.toSVG(
-        front,
-        this.getSvgRenderOptions(frontOutline, colorFront, colorLight)
-      );
+      const svg = makerjs.exporter.toSVG(front, this.getSvgRenderOptions(frontOutline, colorFront, colorLight));
 
       this.preview.next(svg);
     });
@@ -147,10 +142,7 @@ export class GeneratorService {
         colorFront,
         colorLight
       ).then(front => {
-        const svg = makerjs.exporter.toSVG(
-          front,
-          this.getSvgRenderOptions(frontOutline, colorFront, colorLight)
-        );
+        const svg = makerjs.exporter.toSVG(front, this.getSvgRenderOptions(frontOutline, colorFront, colorLight));
 
         resolve(svg);
       });
@@ -284,10 +276,7 @@ export class GeneratorService {
         colorFront,
         colorLight
       ).then(front => {
-        const svg = makerjs.exporter.toSVG(
-          front,
-          this.getSvgRenderOptions(frontOutline, colorFront, colorLight)
-        );
+        const svg = makerjs.exporter.toSVG(front, this.getSvgRenderOptions(frontOutline, colorFront, colorLight));
         const element = document.createElement('div');
         element.innerHTML = svg;
         svgToPng.svgAsPngUri(
@@ -296,7 +285,7 @@ export class GeneratorService {
             encoderOptions: 1,
             scale: 5.906
           },
-          uri => {
+          function(uri) {
             // Convert URI to Blob, see https://stackoverflow.com/a/30407959
             const arr = uri.split(','),
               mime = arr[0].match(/:(.*?);/)[1],
@@ -400,10 +389,7 @@ export class GeneratorService {
         const stream = doc.pipe(blobStream());
 
         // Workaround to get a color PDF, as well as to fine-tune the stroke width in case it is an Outline export.
-        const svg = makerjs.exporter.toSVG(
-          front,
-          this.getSvgRenderOptions(frontOutline, colorFront, colorLight)
-        );
+        const svg = makerjs.exporter.toSVG(front, this.getSvgRenderOptions(frontOutline, colorFront, colorLight));
         SVGtoPDF(doc, svg, 0, 0);
 
         // Preferred solution, as soon as makerjs can handle layer color and stroke width.
@@ -420,11 +406,7 @@ export class GeneratorService {
     return promise;
   }
 
-  private getSvgRenderOptions(
-    frontOutline: boolean,
-    colorFront: string,
-    colorLight: string
-  ): makerjs.exporter.ISVGRenderOptions {
+  private getSvgRenderOptions(frontOutline: boolean, colorFront: string, colorLight: string): makerjs.exporter.ISVGRenderOptions {
     let svgRenderOptions: makerjs.exporter.ISVGRenderOptions = {
       layerOptions: {
         background: { fill: colorFront, stroke: 'none' },
@@ -447,12 +429,7 @@ export class GeneratorService {
     return svgRenderOptions;
   }
 
-  private calculateAlarmCoordinate(
-    height: number,
-    width: number,
-    startX: number,
-    startY: number
-  ): ICoordinate[] {
+  private calculateAlarmCoordinate(height: number, width: number, startX: number, startY: number): ICoordinate[] {
     const grid: ICoordinate[] = [];
     const x = startX;
     const y = height - startY;
@@ -495,12 +472,7 @@ export class GeneratorService {
     return grid;
   }
 
-  private calculateLogoCoordinate(
-    height: number,
-    width: number,
-    startX: number,
-    startY: number
-  ): ICoordinate[] {
+  private calculateLogoCoordinate(height: number, width: number, startX: number, startY: number): ICoordinate[] {
     const grid: ICoordinate[] = [];
     const x = startX;
     const y = height - startY;
@@ -509,13 +481,7 @@ export class GeneratorService {
     return grid;
   }
 
-  private calculateMinutesCoordinate(
-    height: number,
-    width: number,
-    startX: number,
-    startY: number,
-    mode: string
-  ): ICoordinate[] {
+  private calculateMinutesCoordinate(height: number, width: number, startX: number, startY: number, mode: string): ICoordinate[] {
     const grid: ICoordinate[] = [];
     switch (mode) {
       case 'horizontal':
@@ -557,19 +523,13 @@ export class GeneratorService {
     return grid;
   }
 
-  private async generateFrontModelAddBackground(
-    frontHeight: number,
-    frontWidth: number
-  ) {
+  private async generateFrontModelAddBackground(frontHeight: number, frontWidth: number) {
     // console.log('GeneratorService generateFrontModelAddBackground()', frontHeight, frontWidth);
     const models: makerjs.IModel[] = [];
 
     const promise = new Promise((resolve, reject) => {
       // Add Rectangle as background
-      const background: makerjs.IModel = new makerjs.models.Rectangle(
-        frontWidth,
-        frontHeight
-      );
+      const background: makerjs.IModel = new makerjs.models.Rectangle(frontWidth, frontHeight);
       background.units = 'Millimeter';
       background.layer = 'background';
       models.push(background);
@@ -578,24 +538,15 @@ export class GeneratorService {
     return promise;
   }
 
-  private async generateFrontModelAddMinutes(
-    minutesGrid: ICoordinate[],
-    minutesRadius: number
-  ) {
+  private async generateFrontModelAddMinutes(minutesGrid: ICoordinate[], minutesRadius: number) {
     // console.log('GeneratorService generateFrontModelAddMinutes()', minutesGrid, minutesRadius);
     const models: makerjs.IModel[] = [];
 
     const promise = new Promise((resolve, reject) => {
       for (let i = 0; i < minutesGrid.length; i++) {
-        let model: makerjs.IModel = new makerjs.models.Oval(
-          minutesRadius * 2,
-          minutesRadius * 2
-        );
+        let model: makerjs.IModel = new makerjs.models.Oval(minutesRadius * 2, minutesRadius * 2);
         model.units = 'Millimeter';
-        model = makerjs.model.move(model, [
-          minutesGrid[i].x - minutesRadius,
-          minutesGrid[i].y - minutesRadius
-        ]);
+        model = makerjs.model.move(model, [minutesGrid[i].x - minutesRadius, minutesGrid[i].y - minutesRadius]);
         model.layer = 'minutes';
         models.push(model);
       }
@@ -622,19 +573,12 @@ export class GeneratorService {
         } else {
           // console.log('GeneratorService generateFrontModelAddAlarm() opentype.load(alarmFont) - SUCCESS');
 
-          let model: makerjs.IModel = new makerjs.models.Text(
-            font,
-            alarmSymbol,
-            alarmSize
-          );
+          let model: makerjs.IModel = new makerjs.models.Text(font, alarmSymbol, alarmSize);
           model.units = 'Millimeter';
           const size = makerjs.measure.modelExtents(model);
           const width = size.center[0];
           const height = size.center[1];
-          model = makerjs.model.move(model, [
-            alarmGrid[0].x - width,
-            alarmGrid[0].y - height
-          ]);
+          model = makerjs.model.move(model, [alarmGrid[0].x - width, alarmGrid[0].y - height]);
           model.layer = 'text';
           models.push(model);
         }
@@ -644,12 +588,7 @@ export class GeneratorService {
     return promise;
   }
 
-  private async generateFrontModelAddText(
-    matrixFont: string,
-    matrixFontSize: number,
-    text: string[],
-    lettersGrid: ICoordinate[]
-  ) {
+  private async generateFrontModelAddText(matrixFont: string, matrixFontSize: number, text: string[], lettersGrid: ICoordinate[]) {
     // console.log('GeneratorService generateFrontModelAddText()', matrixFont, matrixFontSize, text, lettersGrid);
     const models: makerjs.IModel[] = [];
 
@@ -661,19 +600,10 @@ export class GeneratorService {
         } else {
           // console.log('HomePage generateFrontModelAddText() - SUCCESS');
           for (let i = 0; i < text.length && i < lettersGrid.length; i++) {
-            let model: makerjs.IModel = new makerjs.models.Text(
-              font,
-              text[i],
-              matrixFontSize
-            );
+            let model: makerjs.IModel = new makerjs.models.Text(font, text[i], matrixFontSize);
             model.units = 'Millimeter';
 
-            let size = this.getLettersSize(
-              model,
-              font,
-              text[i],
-              matrixFontSize
-            );
+            let size = this.getLettersSize(model, font, text[i], matrixFontSize);
             // Special case, if a letter is not defined in the font file, e.g. X in Klingon
             if (size === undefined) {
               size = {
@@ -687,10 +617,7 @@ export class GeneratorService {
 
             const width = size.center[0];
             const height = size.center[1];
-            model = makerjs.model.move(model, [
-              lettersGrid[i].x - width,
-              lettersGrid[i].y - height
-            ]);
+            model = makerjs.model.move(model, [lettersGrid[i].x - width, lettersGrid[i].y - height]);
             model.layer = 'text';
             models.push(model);
           }
@@ -701,12 +628,7 @@ export class GeneratorService {
     return promise;
   }
 
-  private async generateFrontModelAddLogo(
-    matrixFont: string,
-    logoText: string,
-    logoTextSize: number,
-    logoGrid: ICoordinate[]
-  ) {
+  private async generateFrontModelAddLogo(matrixFont: string, logoText: string, logoTextSize: number, logoGrid: ICoordinate[]) {
     // console.log('GeneratorService generateFrontModelAddLogo()', matrixFont, logoText, logoTextSize, logoGrid);
     const models: makerjs.IModel[] = [];
 
@@ -717,19 +639,12 @@ export class GeneratorService {
           reject(error);
         } else {
           // console.log('HomePage generateFrontModelAddLogo() - SUCCESS');
-          let model: makerjs.IModel = new makerjs.models.Text(
-            font,
-            logoText,
-            logoTextSize
-          );
+          let model: makerjs.IModel = new makerjs.models.Text(font, logoText, logoTextSize);
           model.units = 'Millimeter';
           const size = makerjs.measure.modelExtents(model);
           const width = size.center[0];
           const height = size.center[1];
-          model = makerjs.model.move(model, [
-            logoGrid[0].x - width,
-            logoGrid[0].y - height
-          ]);
+          model = makerjs.model.move(model, [logoGrid[0].x - width, logoGrid[0].y - height]);
           model.layer = 'text';
           models.push(model);
         }
@@ -770,43 +685,20 @@ export class GeneratorService {
       models: []
     };
 
-    const resultBackground = await this.generateFrontModelAddBackground(
-      frontHeight,
-      frontWidth
-    ).then(models => {
+    const resultBackground = await this.generateFrontModelAddBackground(frontHeight, frontWidth).then(models => {
       front.models = front.models.concat(models);
     });
 
     // Add Minutes
-    const minutesGrid = this.calculateMinutesCoordinate(
-      frontHeight,
-      frontWidth,
-      minutesDistanceX,
-      minutesDistanceY,
-      minutesPlacement
-    );
-    const resultMinutes = await this.generateFrontModelAddMinutes(
-      minutesGrid,
-      minutesRadius
-    ).then(models => {
+    const minutesGrid = this.calculateMinutesCoordinate(frontHeight, frontWidth, minutesDistanceX, minutesDistanceY, minutesPlacement);
+    const resultMinutes = await this.generateFrontModelAddMinutes(minutesGrid, minutesRadius).then(models => {
       front.models = front.models.concat(models);
     });
 
     // Add Alarm
     if (alarmSymbol.length > 0) {
-      const alarmGrid = this.calculateAlarmCoordinate(
-        frontHeight,
-        frontWidth,
-        alarmDistanceX,
-        alarmDistanceY
-      );
-      const resultAlarm = await this.generateFrontModelAddAlarm(
-        frontHeight,
-        frontWidth,
-        alarmSymbol,
-        alarmSize,
-        alarmGrid
-      ).then(models => {
+      const alarmGrid = this.calculateAlarmCoordinate(frontHeight, frontWidth, alarmDistanceX, alarmDistanceY);
+      const resultAlarm = await this.generateFrontModelAddAlarm(frontHeight, frontWidth, alarmSymbol, alarmSize, alarmGrid).then(models => {
         front.models = front.models.concat(models);
       });
     }
@@ -821,29 +713,14 @@ export class GeneratorService {
       matrixDistanceX,
       matrixDistanceY
     );
-    const resultText = await this.generateFrontModelAddText(
-      matrixFont,
-      matrixFontSize,
-      text,
-      lettersGrid
-    ).then(models => {
+    const resultText = await this.generateFrontModelAddText(matrixFont, matrixFontSize, text, lettersGrid).then(models => {
       front.models = front.models.concat(models);
     });
 
     // Add Logo
     if (logoText.length > 0) {
-      const logoGrid = this.calculateLogoCoordinate(
-        frontHeight,
-        frontWidth,
-        logoDistanceX,
-        logoDistanceY
-      );
-      const resultLogo = await this.generateFrontModelAddLogo(
-        matrixFont,
-        logoText,
-        logoTextSize,
-        logoGrid
-      ).then(models => {
+      const logoGrid = this.calculateLogoCoordinate(frontHeight, frontWidth, logoDistanceX, logoDistanceY);
+      const resultLogo = await this.generateFrontModelAddLogo(matrixFont, logoText, logoTextSize, logoGrid).then(models => {
         front.models = front.models.concat(models);
       });
     }
@@ -857,12 +734,7 @@ export class GeneratorService {
     return front;
   }
 
-  private getLettersSize(
-    model: makerjs.IModel,
-    font: opentype.Font,
-    letter: string,
-    matrixFontSize: number
-  ): makerjs.IMeasureWithCenter {
+  private getLettersSize(model: makerjs.IModel, font: opentype.Font, letter: string, matrixFontSize: number): makerjs.IMeasureWithCenter {
     let size: makerjs.IMeasureWithCenter;
     let char: makerjs.IModel;
     /**
@@ -988,10 +860,7 @@ export class GeneratorService {
     text = text.replace(/(\r\n|\n|\r)/gm, '');
     for (let letter = 0; letter < text.length; letter++) {
       // SPECIAL CASE: Add Unicode Character 'APOSTROPHE' (U+0027) and 'ACUTE ACCENT' (U+00B4) to previous letter
-      if (
-        text.charCodeAt(letter + 1) === 39 ||
-        text.charCodeAt(letter + 1) === 180
-      ) {
+      if (text.charCodeAt(letter + 1) === 39 || text.charCodeAt(letter + 1) === 180) {
         letters.push(text.charAt(letter) + text.charAt(letter + 1));
         letter = letter + 1;
       } else {
