@@ -9,29 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./variants.component.scss']
 })
 export class VariantsComponent implements OnInit {
+  variants: IVariantGroupedBySupplier[] = [];
+  variantSelected: IVariant;
 
-  protected variants: IVariantGroupedBySupplier[] = [];
-  protected variantSelected: IVariant;
-
-  constructor(
-    private navParams: NavParams,
-    private popoverCtrl: PopoverController,
-    private variantsService: VariantsService,
-  ) {
+  constructor(private navParams: NavParams, private popoverCtrl: PopoverController, private variantsService: VariantsService) {
     // console.log("VariantsComponent constructor()", this.navParams.data);
     this.variants = this.variantsService.getVariantsGroupedBySupplier();
     if (this.navParams.data) {
-      this.variantSelected = this.navParams.get("select");
+      this.variantSelected = this.navParams.get('select');
     }
   }
 
-  protected close(data: IVariant, ) {
+  close(data: IVariant) {
     // console.log("VariantsComponent close()", data);
-    this.popoverCtrl.dismiss(data, "select");
+    this.popoverCtrl.dismiss(data, 'select');
   }
 
   ngOnInit() {
     // console.log("VariantsComponent ngOnInit()");
   }
-
 }

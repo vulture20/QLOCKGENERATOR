@@ -8,29 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./placements.component.scss']
 })
 export class PlacementsComponent implements OnInit {
+  placements: IPlacement[] = [];
+  placementSelected: IPlacement;
 
-  protected placements: IPlacement[] = [];
-  protected placementSelected: IPlacement;
-
-  constructor(
-    private navParams: NavParams,
-    private popoverCtrl: PopoverController,
-    private placementsService: PlacementsService,
-  ) {
+  constructor(private navParams: NavParams, private popoverCtrl: PopoverController, private placementsService: PlacementsService) {
     // console.log("PlacementsComponent constructor()", this.navParams.data);
     this.placements = this.placementsService.getPlacements();
     if (this.navParams.data) {
-      this.placementSelected = this.navParams.get("select");
+      this.placementSelected = this.navParams.get('select');
     }
   }
 
-  protected close(data: IPlacement, ) {
+  close(data: IPlacement) {
     // console.log("PlacementsComponent close()", data);
-    this.popoverCtrl.dismiss(data, "select");
+    this.popoverCtrl.dismiss(data, 'select');
   }
 
   ngOnInit() {
     // console.log("PlacementsComponent ngOnInit()");
   }
-
 }

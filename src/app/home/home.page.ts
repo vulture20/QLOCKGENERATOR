@@ -1,15 +1,6 @@
 import { FONTS } from './../configs/fonts';
-import {
-  ILanguage,
-  IVariant,
-  IVariantGroupedBySupplier,
-  IFont,
-  IFontAlarm
-} from './../core/core.module';
-import {
-  IPlacement,
-  PlacementsService
-} from './../services/placements/placements.service';
+import { ILanguage, IVariant, IVariantGroupedBySupplier, IFont, IFontAlarm } from './../core/core.module';
+import { IPlacement, PlacementsService } from './../services/placements/placements.service';
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
@@ -25,12 +16,7 @@ import { FontsComponent } from './../components/matrix/fonts/fonts.component';
 import { PlacementsComponent } from './../components/minutes/placements/placements.component';
 
 import { saveAs } from 'file-saver/FileSaver';
-import {
-  DEFAULT_ALARM_SYMBOL_NONE,
-  DEFAULT_ALARM_SYMBOL,
-  DEFAULT_FONT,
-  DEFAULT_VARIANT
-} from '../configs/defaults';
+import { DEFAULT_ALARM_SYMBOL_NONE, DEFAULT_ALARM_SYMBOL, DEFAULT_FONT, DEFAULT_VARIANT } from '../configs/defaults';
 
 @Component({
   selector: 'app-home',
@@ -41,46 +27,46 @@ export class HomePage implements AfterViewInit {
   @ViewChild('drawing') drawing: ElementRef;
 
   // Default settings
-  protected generalFrontVariant: IVariant = DEFAULT_VARIANT;
-  protected generalFrontVariants: IVariantGroupedBySupplier[] = [];
-  protected generalFrontHeight = 450;
-  protected generalFrontWidth = 450;
-  protected generalFrontMirror = false;
-  protected generalFrontOutline = false;
-  protected minutesPlacement: IPlacement = {
+  generalFrontVariant: IVariant = DEFAULT_VARIANT;
+  generalFrontVariants: IVariantGroupedBySupplier[] = [];
+  generalFrontHeight = 450;
+  generalFrontWidth = 450;
+  generalFrontMirror = false;
+  generalFrontOutline = false;
+  minutesPlacement: IPlacement = {
     id: 0,
     value: 'corner',
     label: 'Ecken'
   };
-  protected minutesRadius = 1;
-  protected minutesDistanceX = 25;
-  protected minutesDistanceY = 25;
-  protected alarmSymbol: IFontAlarm = DEFAULT_ALARM_SYMBOL_NONE;
-  protected alarmSymbols: IFontAlarm[] = [];
-  protected alarmSize = 11;
-  protected alarmDistanceX = 225;
-  protected alarmDistanceY = 25;
-  protected matrixColumns = 11;
-  protected matrixRows = 10;
-  protected matrixDistanceX = 83.5;
-  protected matrixDistanceY = 83.5;
-  protected matrixLanguage: ILanguage = {
+  minutesRadius = 1;
+  minutesDistanceX = 25;
+  minutesDistanceY = 25;
+  alarmSymbol: IFontAlarm = DEFAULT_ALARM_SYMBOL_NONE;
+  alarmSymbols: IFontAlarm[] = [];
+  alarmSize = 11;
+  alarmDistanceX = 225;
+  alarmDistanceY = 25;
+  matrixColumns = 11;
+  matrixRows = 10;
+  matrixDistanceX = 83.5;
+  matrixDistanceY = 83.5;
+  matrixLanguage: ILanguage = {
     id: 'DE',
     label: 'DE Deutsch',
     value: ''
   };
-  protected matrixLanguages: ILanguage[] = [];
-  protected matrixText =
+  matrixLanguages: ILanguage[] = [];
+  matrixText =
     'ESKISTAFÜNF\nZEHNZWANZIG\nDREIVIERTEL\nVORFUNKNACH\nHALBAELFÜNF\nEINSXAMZWEI\nDREIPMJVIER\nSECHSNLACHT\nSIEBENZWÖLF\nZEHNEUNKUHR';
-  protected matrixFont: IFont = DEFAULT_FONT;
-  protected matrixFonts: IFont[] = FONTS;
-  protected matrixFontSize = 21;
-  protected logoText = '';
-  protected logoTextSize = 5.25;
-  protected logoDistanceX = 225;
-  protected logoDistanceY = 425;
-  protected colorFront = '#000000';
-  protected colorLight = '#FFFFFF';
+  matrixFont: IFont = DEFAULT_FONT;
+  matrixFonts: IFont[] = FONTS;
+  matrixFontSize = 21;
+  logoText = '';
+  logoTextSize = 5.25;
+  logoDistanceX = 225;
+  logoDistanceY = 425;
+  colorFront = '#000000';
+  colorLight = '#FFFFFF';
 
   constructor(
     public generator: GeneratorService,
@@ -106,16 +92,16 @@ export class HomePage implements AfterViewInit {
     this.generateFrontPreview();
   }
 
-  protected onClickGithubLogo() {
+  onClickGithubLogo() {
     // console.log("HomePage onClickGithubLogo()");
     window.open('https://github.com/SimonGolms/QLOCKGENERATOR');
   }
 
-  protected onChangeFrontVariant() {
+  onChangeFrontVariant() {
     // console.log("HomePage onChangeFrontVariant()");
   }
 
-  protected async onClickFrontVariant(event: any = null) {
+  async onClickFrontVariant(event: any = null) {
     // console.log("HomePage onClickFrontVariant()");
     const popover = await this.popoverController.create({
       component: VariantsComponent,
@@ -131,9 +117,7 @@ export class HomePage implements AfterViewInit {
 
         this.generalFrontHeight = this.generalFrontVariant.data.front.height;
         this.generalFrontWidth = this.generalFrontVariant.data.front.width;
-        this.minutesPlacement = this.placementsService.getPlacementByValue(
-          this.generalFrontVariant.data.minutes.placement
-        );
+        this.minutesPlacement = this.placementsService.getPlacementByValue(this.generalFrontVariant.data.minutes.placement);
         this.minutesRadius = this.generalFrontVariant.data.minutes.radius;
         this.minutesDistanceX = this.generalFrontVariant.data.minutes.distance.x;
         this.minutesDistanceY = this.generalFrontVariant.data.minutes.distance.y;
@@ -159,7 +143,7 @@ export class HomePage implements AfterViewInit {
     return await popover.present();
   }
 
-  protected onChangeFrontHeight(event: any = null) {
+  onChangeFrontHeight(event: any = null) {
     // console.log("HomePage onChangeFrontHeight()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.generalFrontHeight !== event.detail.value) {
@@ -168,7 +152,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeFrontWidth(event: any = null) {
+  onChangeFrontWidth(event: any = null) {
     // console.log("HomePage onChangeFrontWidth()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.generalFrontWidth !== event.detail.value) {
@@ -177,22 +161,22 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeFrontMirror(event: any = null) {
+  onChangeFrontMirror(event: any = null) {
     // console.log("HomePage onChangeFrontMirror()", event);
     this.generateFrontPreview();
   }
 
-  protected onChangeFrontOutline(event: any = null) {
+  onChangeFrontOutline(event: any = null) {
     // console.log("HomePage onChangeFrontOutline()", event);
     this.generateFrontPreview();
   }
 
-  protected onChangeMinutesPlacement(event: any = null) {
+  onChangeMinutesPlacement(event: any = null) {
     //  console.log("HomePage onChangeMinutesPlacement()", event, this.minutesPlacement);
     this.generateFrontPreview();
   }
 
-  protected async onClickMinutesPlacement(event: any = null) {
+  async onClickMinutesPlacement(event: any = null) {
     //  console.log("HomePage onClickMinutesPlacement()", event);
     const popover = await this.popoverController.create({
       component: PlacementsComponent,
@@ -212,7 +196,7 @@ export class HomePage implements AfterViewInit {
     return await popover.present();
   }
 
-  protected onChangeMinutesRadius(event: any = null) {
+  onChangeMinutesRadius(event: any = null) {
     // console.log("HomePage onChangeMinutesRadius()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.minutesRadius !== event.detail.value) {
@@ -221,7 +205,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMinutesDistanceX(event: any = null) {
+  onChangeMinutesDistanceX(event: any = null) {
     // console.log("HomePage onChangeMinutesDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.minutesDistanceX !== event.detail.value) {
@@ -230,7 +214,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMinutesDistanceY(event: any = null) {
+  onChangeMinutesDistanceY(event: any = null) {
     // console.log("HomePage onChangeMinutesDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.minutesDistanceY !== event.detail.value) {
@@ -239,11 +223,11 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeAlarmSymbol(event: any = null) {
+  onChangeAlarmSymbol(event: any = null) {
     // console.log("HomePage onChangeAlarmSymbol()", event);
   }
 
-  protected async onClickAlarmSymbol(event: any = null) {
+  async onClickAlarmSymbol(event: any = null) {
     // console.log("HomePage onClickAlarmSymbol()", event);
     const popover = await this.popoverController.create({
       component: SymbolsComponent,
@@ -263,7 +247,7 @@ export class HomePage implements AfterViewInit {
     return await popover.present();
   }
 
-  protected onChangeAlarmSize(event: any = null) {
+  onChangeAlarmSize(event: any = null) {
     // console.log("HomePage onChangeAlarmSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.alarmSize !== event.detail.value) {
@@ -272,7 +256,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeAlarmDistanceX(event: any = null) {
+  onChangeAlarmDistanceX(event: any = null) {
     // console.log("HomePage onChangeAlarmDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.alarmDistanceX !== event.detail.value) {
@@ -281,7 +265,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeAlarmDistanceY(event: any = null) {
+  onChangeAlarmDistanceY(event: any = null) {
     // console.log("HomePage onChangeAlarmDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.alarmDistanceY !== event.detail.value) {
@@ -290,7 +274,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMatrixColumns(event: any = null) {
+  onChangeMatrixColumns(event: any = null) {
     // console.log("HomePage onChangeMatrixColumns()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.matrixColumns !== event.detail.value) {
@@ -299,7 +283,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMatrixRows(event: any = null) {
+  onChangeMatrixRows(event: any = null) {
     // console.log("HomePage onChangeMatrixRows()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.matrixRows !== event.detail.value) {
@@ -308,7 +292,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMatrixDistanceX(event: any = null) {
+  onChangeMatrixDistanceX(event: any = null) {
     // console.log("HomePage onChangeMatrixDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.matrixDistanceX !== event.detail.value) {
@@ -317,7 +301,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMatrixDistanceY(event: any = null) {
+  onChangeMatrixDistanceY(event: any = null) {
     // console.log("HomePage onChangeMatrixDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.matrixDistanceY !== event.detail.value) {
@@ -326,11 +310,11 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeMatrixLanguage(event: any = null) {
+  onChangeMatrixLanguage(event: any = null) {
     // console.log("HomePage onChangeMatrixLanguage()", event);
   }
 
-  protected async onClickMatrixLanguage(event: any = null) {
+  async onClickMatrixLanguage(event: any = null) {
     // console.log("HomePage onClickMatrixLanguage()", event);
     const popover = await this.popoverController.create({
       component: LanguagesComponent,
@@ -341,15 +325,10 @@ export class HomePage implements AfterViewInit {
     });
 
     popover.onDidDismiss().then(data => {
-      console.log(
-        'HomePage onClickMatrixLanguage() - popover.onDidDismiss()',
-        data
-      );
+      console.log('HomePage onClickMatrixLanguage() - popover.onDidDismiss()', data);
       if (data.role === 'select') {
         this.matrixLanguage = data.data;
-        this.matrixText = this.languagesService.getLanguageValueById(
-          this.matrixLanguage.id
-        );
+        this.matrixText = this.languagesService.getLanguageValueById(this.matrixLanguage.id);
 
         this.generateFrontPreview();
       }
@@ -358,17 +337,17 @@ export class HomePage implements AfterViewInit {
     return await popover.present();
   }
 
-  protected onChangeMatrixText(event: any = null) {
+  onChangeMatrixText(event: any = null) {
     // console.log("HomePage onChangeMatrixText()", event);
     this.generateFrontPreview();
   }
 
-  protected onChangeMatrixFont(event: any = null) {
+  onChangeMatrixFont(event: any = null) {
     // console.log("HomePage onChangeMatrixFont()", event);
     this.matrixFont = this.fontService.getFontPathById(this.matrixFont.id);
   }
 
-  protected async onClickMatrixFont(event: any = null) {
+  async onClickMatrixFont(event: any = null) {
     // console.log("HomePage onClickMatrixFont()", event);
     const popover = await this.popoverController.create({
       component: FontsComponent,
@@ -391,7 +370,7 @@ export class HomePage implements AfterViewInit {
     return await popover.present();
   }
 
-  protected onChangeMatrixFontSize(event: any = null) {
+  onChangeMatrixFontSize(event: any = null) {
     // console.log("HomePage onChangeMatrixFontSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.matrixFontSize !== event.detail.value) {
@@ -399,7 +378,7 @@ export class HomePage implements AfterViewInit {
       this.generateFrontPreview();
     }
   }
-  protected onChangeLogoText(event: any = null) {
+  onChangeLogoText(event: any = null) {
     // console.log("HomePage onChangeLogoText()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.logoText !== event.detail.value) {
@@ -407,7 +386,7 @@ export class HomePage implements AfterViewInit {
       this.generateFrontPreview();
     }
   }
-  protected onChangeLogoTextSize(event: any = null) {
+  onChangeLogoTextSize(event: any = null) {
     // console.log("HomePage onChangeLogoTextSize()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.logoTextSize !== event.detail.value) {
@@ -415,7 +394,7 @@ export class HomePage implements AfterViewInit {
       this.generateFrontPreview();
     }
   }
-  protected onChangeLogoDistanceX(event: any = null) {
+  onChangeLogoDistanceX(event: any = null) {
     // console.log("HomePage onChangeLogoDistanceX()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.logoDistanceX !== event.detail.value) {
@@ -424,7 +403,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeLogoDistanceY(event: any = null) {
+  onChangeLogoDistanceY(event: any = null) {
     // console.log("HomePage onChangeLogoDistanceY()", event);
     // Workaround to only allow changes via the view component to trigger a new generation of a Front Preview
     if (event !== null && this.logoDistanceY !== event.detail.value) {
@@ -433,7 +412,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeColorFront(event: any = null) {
+  onChangeColorFront(event: any = null) {
     // console.log("HomePage onChangeColorFront()", event);
     // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
     const element = document.getElementById('background');
@@ -443,7 +422,7 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  protected onChangeColorLight(event: any = null) {
+  onChangeColorLight(event: any = null) {
     // console.log("HomePage onChangeColorLight()", event);
     // Change the fill CSS property of the SVG preview for better performance instead of generating a new preview
     let element = document.getElementById('minutes');
