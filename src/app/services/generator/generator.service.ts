@@ -366,7 +366,7 @@ export class GeneratorService {
         const pdfOptions = {
           compress: false,
           // 1 millimeter [mm] = 2.83464566929134 point
-          size: [frontHeight * 2.83464566929134, frontWidth * 2.83464566929134],
+          size: [frontWidth * 2.83464566929134, frontHeight * 2.83464566929134],
           info: {
             Title: this.getFileName(
               frontHeight,
