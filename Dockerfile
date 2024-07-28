@@ -1,7 +1,7 @@
 FROM node
 RUN npm install -g ionic@latest
 WORKDIR /www/app
-COPY QLOCKGENERATOR /www/app
+COPY . /www/app
 RUN cd /www/app & ls -la
 RUN npm install
 EXPOSE 8100
